@@ -1,1 +1,1447 @@
-
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>I play PFLF everyday :D</title>
+	<link id="cute6361omg" rel="icon" href="data:image/svg+xml,
+		<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+			<path d='M0 0L100 0L100 100L0 100Z' style='stroke: none; fill: %23000000'/>
+			<path d='M20 20L32 20L32 32L20 32L20 44L32 44M44 20L56 20L56 32L44 32L44 44L56 44M44 56L56 56L56 68L44 68L44 80L56 80' style='stroke: %23ff7f7f; stroke-width: 5px; fill: none'/>
+			<path d='M80 20L68 20L68 44L80 44L80 32L68 32M32 56L20 56L20 80L32 80L32 68L20 68M80 56L68 56L68 80L80 80L80 68L68 68' style='stroke: %237f7fff; stroke-width: 5px; fill: none'/>
+		</svg>
+	">
+	<style>
+		body {
+			touch-action: manipulation;
+			-webkit-user-select: none;
+			user-select: none;
+			overflow: hidden;
+		}
+		input {
+			width: 30px;
+		}
+		g,path {
+			transform-origin: center;
+		}
+		.tl {
+			position: absolute;
+			top: 20px;
+			left: 20px;
+		}
+		.tr {
+			position: absolute;
+			top: 20px;
+			right: 20px;
+		}
+		.bl {
+			position: absolute;
+			bottom: 20px;
+			left: 20px;
+		}
+		.br {
+			position: absolute;
+			bottom: 20px;
+			right: 20px;
+		}
+		.mid {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%) var(--transform2,translate(0px,0px));
+		}
+		.cmid {
+			position: absolute;
+			top: 50%;
+			transform: translate(0px,-50%) var(--transform2,translate(0px,0px));
+		}
+		.rmid {
+			position: absolute;
+			left: 50%;
+			transform: translate(-50%,0px) var(--transform2,translate(0px,0px));
+		}
+		.smid {
+			transform: translate(-50%,-50%);
+		}
+		.bottom {
+			position: absolute;
+			top: 100%;
+			left: 50%;
+			transform: translate(-50%,-100px);
+		}
+		.lcmargin {
+			margin-top: 5px;
+			margin-bottom: 5px;
+		}
+		.cmargin {
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+		.topmargin {
+			margin-top: 20px;
+		}
+		.bottommargin {
+			margin-bottom: 20px;
+		}
+		.hcmargin {
+			margin-top: 50px;
+			margin-bottom: 50px;
+		}
+		.llmargin {
+			margin-left: 5px;
+			margin-right: 5px;
+		}
+		.lmargin {
+			margin-left: 20px;
+			margin-right: 20px;
+		}
+		.hlmargin {
+			margin-left: 50px;
+			margin-right: 50px;
+		}
+		.diag {
+			transform: rotate(45deg);
+		}
+		.rot72 {
+			transform: rotate(72deg);
+		}
+		.rot144 {
+			transform: rotate(144deg);
+		}
+		.rot216 {
+			transform: rotate(216deg);
+		}
+		.rot288 {
+			transform: rotate(288deg);
+		}
+		.sqrbtn {
+			background: none;
+			border: none;
+			outline: none;
+			height: 50px;
+			width: 50px;
+			padding: 0px;
+		}
+		.sqrbtn:hover {
+			background: #dfffdf;
+		}
+		.recbtn {
+			border: 1.5px solid;
+			outline: none;
+			min-height: 30px;
+			min-width: 50px;
+			padding-left: 5px;
+			padding-right: 5px;
+			white-space: nowrap;
+		}
+		.srecbtn {
+			border: 1px solid;
+			outline: none;
+			height: 20px;
+			min-width: 30px;
+			padding-left: 3px;
+			padding-right: 3px;
+			font-size: 12px;
+			white-space: nowrap;
+		}
+		.circbtn {
+			background: none;
+			border: none;
+			outline: none;
+			height: 50px;
+			width: 50px;
+			border-radius: 50%;
+			padding: 0px;
+			overflow: hidden;
+		}
+		.circbtn:hover {
+			background: #dfffdf;
+		}
+		.dice {
+			background: none;
+			border: none;
+			outline: none;
+			height: 60px;
+			width: 60px;
+			padding: 0px;
+		}
+		.mingrid {
+			background: none;
+			position: relative;
+			border: none;
+			outline: none;
+			height: 20px;
+			width: 20px;
+			padding: 0px;
+		}
+		.sgrid {
+			background: none;
+			position: relative;
+			border: none;
+			outline: none;
+			height: 40px;
+			width: 40px;
+			padding: 0px;
+		}
+		.grid {
+			background: none;
+			position: relative;
+			border: 2px solid;
+			outline: none;
+			height: 60px;
+			width: 60px;
+			padding: 0px;
+		}
+		.bgrid {
+			background: none;
+			position: relative;
+			border: none;
+			border-radius: 8%;
+			outline: none;
+			height: 80px;
+			width: 80px;
+			padding: 0px;
+			white-space: nowrap;
+		}
+		.bar-container {
+			background-color: #7f7f7f;
+			position: relative;
+			height: 30px;
+			width: 250px;
+			border-radius: 15px;
+		}
+		.bar {
+			background-color: #5fbf5f;
+			height: 100%;
+			width: 50%;
+			border-radius: 15px;
+		}
+		.bar-text {
+			display: flex;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			height: 100%;
+			width: 100%;
+			justify-content: center;
+			align-items: center;
+		}
+		.side-bar-container {
+			background-color: #7f7f7f;
+			position: relative;
+			height: 500px;
+			width: 30px;
+			border-radius: 15px;
+		}
+		.side-bar {
+			background-color: #5fbf5f;
+			position: absolute;
+			bottom: 0px;
+			height: 50%;
+			width: 100%;
+			border-radius: 15px;
+		}
+		.pointer {
+			cursor: pointer;
+		}
+		.drag {
+			cursor: grab;
+		}
+		.drag:active {
+			cursor: grabbing;
+		}
+		.forbidden {
+			cursor: not-allowed;
+		}
+		.in-svg {
+			height: 100%;
+			width: 100%;
+			stroke: #000000;
+			stroke-width: 5px;
+			fill: none;
+		}
+		.inner-svg {
+			position: relative;
+			top: 10%;
+			left: 10%;
+			height: 80%;
+			width: 80%;
+			stroke: #000000;
+			stroke-width: 5px;
+			fill: none;
+		}
+		.in-text {
+			font-size: 2px;
+			stroke: none;
+			fill: #000000;
+			text-anchor: middle;
+		}
+		.small-svg {
+			height: 15px;
+			min-width: 15px;
+			stroke: #000000;
+			stroke-width: 2px;
+			fill: none;
+		}
+		.black {
+			color: #000000;
+		}
+		.black-bg {
+			background-color: #000000;
+		}
+		.fblack-path {
+			stroke-width: 1px;
+			fill: #000000;
+		}
+		.black-path {
+			stroke: #000000;
+		}
+		.dgrey {
+			color: #3f3f3f;
+		}
+		.dgrey-bg {
+			background-color: #3f3f3f;
+		}
+		.fdgrey-path {
+			stroke-width: 1px;
+			fill: #3f3f3f;
+		}
+		.dgrey-path {
+			stroke: #3f3f3f;
+		}
+		.grey {
+			color: #7f7f7f;
+		}
+		.grey-bg {
+			background-color: #7f7f7f;
+		}
+		.fgrey-path {
+			stroke-width: 1px;
+			fill: #7f7f7f;
+		}
+		.grey-path {
+			stroke: #7f7f7f;
+		}
+		.lgrey {
+			color: #bfbfbf;
+		}
+		.lgrey-bg {
+			background-color: #bfbfbf;
+		}
+		.flgrey-path {
+			stroke-width: 1px;
+			fill: #bfbfbf;
+		}
+		.lgrey-path {
+			stroke: #bfbfbf;
+		}
+		.white {
+			color: #ffffff;
+		}
+		.white-bg {
+			background-color: #ffffff;
+		}
+		.fwhite-path {
+			stroke-width: 1px;
+			fill: #ffffff;
+		}
+		.white-path {
+			stroke: #ffffff;
+		}
+		.red {
+			color: #ff7f7f;
+		}
+		.red-bg {
+			background-color: #ff7f7f;
+		}
+		.fred-path {
+			stroke-width: 1px;
+			fill: #ff7f7f;
+		}
+		.red-path {
+			stroke: #ff7f7f;
+		}
+		.lred {
+			color: #ffbfbf;
+		}
+		.lred-bg {
+			background-color: #ffbfbf;
+		}
+		.flred-path {
+			stroke-width: 1px;
+			fill: #ffbfbf;
+		}
+		.lred-path {
+			stroke: #ffbfbf;
+		}
+		.llred {
+			color: #ffdfdf;
+		}
+		.llred-bg {
+			background-color: #ffdfdf;
+		}
+		.fllred-path {
+			stroke-width: 1px;
+			fill: #ffdfdf;
+		}
+		.llred-path {
+			stroke: #ffdfdf;
+		}
+		.green {
+			color: #7fff7f;
+		}
+		.green-bg {
+			background-color: #7fff7f;
+		}
+		.fgreen-path {
+			stroke-width: 1px;
+			fill: #7fff7f;
+		}
+		.green-path {
+			stroke: #7fff7f;
+		}
+		.lgreen {
+			color: #bfffbf;
+		}
+		.lgreen-bg {
+			background-color: #bfffbf;
+		}
+		.flgreen-path {
+			stroke-width: 1px;
+			fill: #bfffbf;
+		}
+		.lgreen-path {
+			stroke: #bfffbf;
+		}
+		.llgreen {
+			color: #dfffdf;
+		}
+		.llgreen-bg {
+			background-color: #dfffdf;
+		}
+		.fllgreen-path {
+			stroke-width: 1px;
+			fill: #dfffdf;
+		}
+		.llgreen-path {
+			stroke: #dfffdf;
+		}
+		.blue {
+			color: #7f7fff;
+		}
+		.blue-bg {
+			background-color: #7f7fff;
+		}
+		.fblue-path {
+			stroke-width: 1px;
+			fill: #7f7fff;
+		}
+		.blue-path {
+			stroke: #7f7fff;
+		}
+		.lblue {
+			color: #bfbfff;
+		}
+		.lblue-bg {
+			background-color: #bfbfff;
+		}
+		.flblue-path {
+			stroke-width: 1px;
+			fill: #bfbfff;
+		}
+		.lblue-path {
+			stroke: #bfbfff;
+		}
+		.llblue {
+			color: #dfdfff;
+		}
+		.llblue-bg {
+			background-color: #dfdfff;
+		}
+		.fllblue-path {
+			stroke-width: 1px;
+			fill: #dfdfff;
+		}
+		.llblue-path {
+			stroke: #dfdfff;
+		}
+		.cyan {
+			color: #7fffff;
+		}
+		.cyan-bg {
+			background-color: #7fffff;
+		}
+		.fcyan-path {
+			stroke-width: 1px;
+			fill: #7fffff;
+		}
+		.cyan-path {
+			stroke: #7fffff;
+		}
+		.lcyan {
+			color: #bfffff;
+		}
+		.lcyan-bg {
+			background-color: #bfffff;
+		}
+		.flcyan-path {
+			stroke-width: 1px;
+			fill: #bfffff;
+		}
+		.lcyan-path {
+			stroke: #bfffff;
+		}
+		.llcyan {
+			color: #dfffff;
+		}
+		.llcyan-bg {
+			background-color: #dfffff;
+		}
+		.fllcyan-path {
+			stroke-width: 1px;
+			fill: #dfffff;
+		}
+		.llcyan-path {
+			stroke: #dfffff;
+		}
+		.purple {
+			color: #ff7fff;
+		}
+		.purple-bg {
+			background-color: #ff7fff;
+		}
+		.fpurple-path {
+			stroke-width: 1px;
+			fill: #ff7fff;
+		}
+		.purple-path {
+			stroke: #ff7fff;
+		}
+		.lpurple {
+			color: #ffbfff;
+		}
+		.lpurple-bg {
+			background-color: #ffbfff;
+		}
+		.flpurple-path {
+			stroke-width: 1px;
+			fill: #ffbfff;
+		}
+		.lpurple-path {
+			stroke: #ffbfff;
+		}
+		.llpurple {
+			color: #ffdfff;
+		}
+		.llpurple-bg {
+			background-color: #ffdfff;
+		}
+		.fllpurple-path {
+			stroke-width: 1px;
+			fill: #ffdfff;
+		}
+		.llpurple-path {
+			stroke: #ffdfff;
+		}
+		.yellow {
+			color: #ffff7f;
+		}
+		.yellow-bg {
+			background-color: #ffff7f;
+		}
+		.fyellow-path {
+			stroke-width: 1px;
+			fill: #ffff7f;
+		}
+		.yellow-path {
+			stroke: #ffff7f;
+		}
+		.lyellow {
+			color: #ffffbf;
+		}
+		.lyellow-bg {
+			background-color: #ffffbf;
+		}
+		.flyellow-path {
+			stroke-width: 1px;
+			fill: #ffffbf;
+		}
+		.lyellow-path {
+			stroke: #ffffbf;
+		}
+		.llyellow {
+			color: #ffffdf;
+		}
+		.llyellow-bg {
+			background-color: #ffffdf;
+		}
+		.fllyellow-path {
+			stroke-width: 1px;
+			fill: #ffffdf;
+		}
+		.llyellow-path {
+			stroke: #ffffdf;
+		}
+		.dbrown {
+			color: #bf3f3f;
+		}
+		.dbrown-bg {
+			background-color: #bf3f3f;
+		}
+		.fdbrown-path {
+			stroke-width: 1px;
+			fill: #bf3f3f;
+		}
+		.dbrown-path {
+			stroke: #bf3f3f;
+		}
+		.dgreen {
+			color: #3fbf3f;
+		}
+		.dgreen-bg {
+			background-color: #3fbf3f;
+		}
+		.fdgreen-path {
+			stroke-width: 1px;
+			fill: #3fbf3f;
+		}
+		.dgreen-path {
+			stroke: #3fbf3f;
+		}
+		.dblue {
+			color: #3f3fbf;
+		}
+		.dblue-bg {
+			background-color: #3f3fbf;
+		}
+		.fdblue-path {
+			stroke-width: 1px;
+			fill: #3f3fbf;
+		}
+		.dblue-path {
+			stroke: #3f3fbf;
+		}
+		.dcyan {
+			color: #3fbfbf;
+		}
+		.dcyan-bg {
+			background-color: #3fbfbf;
+		}
+		.fdcyan-path {
+			stroke-width: 1px;
+			fill: #3fbfbf;
+		}
+		.dcyan-path {
+			stroke: #3fbfbf;
+		}
+		.dpurple {
+			color: #bf3fbf;
+		}
+		.dpurple-bg {
+			background-color: #bf3fbf;
+		}
+		.fdpurple-path {
+			stroke-width: 1px;
+			fill: #bf3fbf;
+		}
+		.dpurple-path {
+			stroke: #bf3fbf;
+		}
+		.dyellow {
+			color: #bfbf3f;
+		}
+		.dyellow-bg {
+			background-color: #bfbf3f;
+		}
+		.fdyellow-path {
+			stroke-width: 1px;
+			fill: #bfbf3f;
+		}
+		.dyellow-path {
+			stroke: #bfbf3f;
+		}
+		.sel-path {
+			stroke-width: 1px;
+			stroke: #ffff7f;
+			fill: #ffff7f;
+		}
+		.square36 {
+			display: grid;
+			grid-template-columns: repeat(6,1fr);
+			grid-template-rows: repeat(6,1fr);
+			background: none;
+			border: none;
+			height: 380px;
+			width: 380px;
+			align-items: center;
+		}
+		.wlist {
+			display: grid;
+			grid-template-columns: repeat(auto-fill,minmax(90px,1fr));
+			width: 80%;
+			margin: 0 auto;
+			row-gap: 10px;
+			justify-items: center;
+		}
+		.box {
+			display: flex;
+			flex-direction: column;
+			border: 2px solid;
+			padding-inline: 20px;
+			overflow-x: hidden;
+			overflow-y: auto;
+			text-align: center;
+		}
+		.inner-box {
+			display: flex;
+			flex-direction: column;
+			font-family: Consolas;
+			width: max-content;
+			border: 1.5px solid;
+			padding: 10px;
+			align-items: flex-start;
+			align-self: center;
+		}
+		.inner-box * {
+			font-family: Consolas;
+		}
+		.infobox {
+			display: flex;
+			flex-direction: column;
+			border: 1px solid;
+			font-size: 12px;
+			width: 300px;
+			padding: 10px;
+			padding-top: 5px;
+			text-align: center;
+			opacity: 0.95;
+		}
+		.itembox {
+			background-color: rgba(191,191,191,0.8);
+			display: flex;
+			height: 90px;
+			width: 400px;
+			padding: 10px;
+			gap: 20px;
+			overflow-x: scroll;
+			overflow-y: hidden;
+			scrollbar-width: thin;
+		}
+		.itembox>* {
+			flex-shrink: 0;
+		}
+		.inner-input {
+			background: #5fbf5f;
+			border: none;
+			outline: none;
+			width: 90%;
+			justify-items: center;
+			align-self: center;
+		}
+		.side-log {
+			position: absolute;
+			background-color: rgba(191,191,191,0.8);
+			border: 1px solid;
+			top: 25%;
+			right: 20px;
+			height: 50%;
+			width: 300px;
+			padding: 5px;
+			box-sizing: border-box;
+			overflow-x: hidden;
+			overflow-y: auto;
+			scrollbar-width: none;
+			font-size: 12px;
+			word-wrap: break-word;
+		}
+		.side-command {
+			position: absolute;
+			background-color: rgba(159,159,159,0.8);
+			border: 1px solid;
+			top: 75%;
+			right: 20px;
+			height: 20px;
+			width: 300px;
+			padding-inline: 5px;
+			box-sizing: border-box;
+		}
+		.side-input {
+			background: none;
+			border: none;
+			outline: none;
+			height: 100%;
+			width: 100%;
+			padding: 0px;
+		}
+		.list-container {
+			position: absolute;
+			display: flex;
+			flex-direction: column;
+			border: 2px solid;
+			top: 100px;
+			bottom: 0px;
+			width: 40%;
+			overflow-x: hidden;
+			overflow-y: auto;
+			scrollbar-width: thin;
+		}
+		.list-box {
+			border: 2px solid;
+			min-height: 100px;
+			width: 100%;
+			margin: -2px;
+			flex-shrink: 0;
+		}
+		.text1 {
+			font-size: 32px;
+		}
+		.text1-c {
+			display: flex;
+			font-size: 32px;
+			justify-content: center;
+			align-items: center;
+		}
+		.text2 {
+			font-size: 24px;
+		}
+		.text2-c {
+			display: flex;
+			font-size: 24px;
+			justify-content: center;
+			align-items: center;
+		}
+		.text3 {
+			font-size: 16px;
+		}
+		.text3-c {
+			display: flex;
+			font-size: 16px;
+			justify-content: center;
+			align-items: center;
+		}
+		.text4 {
+			font-size: 12px;
+		}
+		.text4-c {
+			display: flex;
+			font-size: 12px;
+			justify-content: center;
+			align-items: center;
+		}
+		.text5 {
+			font-size: 8px;
+		}
+		.text5-c {
+			display: flex;
+			font-size: 8px;
+			justify-content: center;
+			align-items: center;
+		}
+		.highz {
+			z-index: 6361;
+		}
+		.higherz {
+			z-index: 6666;
+		}
+		.highestz {
+			z-index: 6859;
+		}
+		.wider {
+			stroke-width: 8px;
+		}
+		.wide {
+			stroke-width: 3px;
+		}
+		.mwidth {
+			stroke-width: 1.5px;
+		}
+		.fwidth {
+			stroke-width: 1px;
+		}
+		.narrow {
+			stroke-width: 0.5px;
+		}
+		.narrowp {
+			stroke-width: 0.1px;
+		}
+		.shsize {
+			height: 30%;
+			width: 30%;
+		}
+		.shwidth {
+			width: 30%;
+		}
+		.hsize {
+			height: 50%;
+			width: 50%;
+		}
+		.hwidth {
+			width: 50%;
+		}
+		.lhsize {
+			height: 70%;
+			width: 70%;
+		}
+		.lhwidth {
+			width: 70%;
+		}
+		.apos {
+			position: absolute;
+		}
+		.rpos {
+			position: relative;
+		}
+		.nd {
+			display: none;
+		}
+		.rflex {
+			display: flex;
+			flex-direction: row;
+		}
+		.cflex {
+			display: flex;
+			flex-direction: column;
+		}
+		.mcont {
+			width: max-content;
+		}
+		.nlh {
+			line-height: 0;
+		}
+		.cjself {
+			justify-self: center;
+		}
+		.cself {
+			align-self: center;
+		}
+		.cjsub {
+			justify-content: center;
+		}
+		.csub {
+			align-items: center;
+		}
+		.border {
+			border: 3px solid;
+		}
+		.circ {
+			border-radius: 50%;
+		}
+		.ns {
+			stroke: none;
+		}
+		.rcap {
+			stroke-linecap: round;
+		}
+		.rjoin {
+			stroke-linejoin: round;
+		}
+		.rline {
+			stroke-linecap: round;
+			stroke-linejoin: round;
+		}
+		.bold {
+			font-weight: bold;
+		}
+		.nowrap {
+			white-space: nowrap;
+		}
+		.wrap {
+			white-space: normal;
+		}
+		.npe {
+			pointer-events: none;
+		}
+	</style>
+	<script>
+		let mouseX,mouseY
+		document.addEventListener('mousemove',(mouse) => {
+			mouseX=mouse.clientX
+			mouseY=mouse.clientY
+		} )
+		const svgNS="http://www.w3.org/2000/svg"
+		const dx=[0,0,1,0,-1],dy=[0,-1,0,1,0],dx5=[0,1,2,2,1,-1,-2,-2,-1],dy5=[0,-2,-1,1,2,2,1,-1,-2]
+		let setting=JSON.parse(localStorage.getItem("PFLFGAMEsetting"))
+		function setSetting() {
+			localStorage.setItem("PFLFGAMEsetting",JSON.stringify(setting))
+		}
+		if(!setting) setting=new Object()
+		let savesetting=structuredClone(setting)
+		setSetting()
+		let animation=false,confirmation=false
+		function safeReload() {
+			requestAnimationFrame(() => {
+				location.reload()
+			} )
+		}
+		function delay(time) {
+			return new Promise(resolve => setTimeout(resolve,time))
+		}
+		function waitAnimation() {
+			return new Promise(resolve => {const checkAnimation=() => animation? setTimeout(checkAnimation,20):resolve(); checkAnimation()})
+		}
+		function waitConfirmation() {
+			return new Promise(resolve => {const checkConfirmation=() => confirmation? setTimeout(checkConfirmation,20):resolve(); checkConfirmation()})
+		}
+		async function copyToClipboard(text) {
+			await navigator.clipboard.writeText(text)
+		}
+		function betterFloor(num) {
+			return Math.floor(num+1e-10)
+		}
+		function approx(num) {
+			return betterFloor(num+0.5)
+		}
+		function isPF(num) {
+			return (betterFloor(num**0.5)**2===num)
+		}
+		function isLF(num) {
+			return (betterFloor(num**(1/3))**3===num)
+		}
+		function isPFLF(num) {
+			return (isPF(num) || isLF(num))
+		}
+		function sfRatio(percentage,mult) {
+			if(percentage>=100) return 100
+			let ratio=percentage/(100-percentage)
+			ratio*=mult
+			return ratio/(1+ratio)*100
+		}
+		function numLength(num) {
+			if(num===0) return 0
+			return num.toString().length
+		}
+		function color(type) {
+			switch(type) {
+				case 1:
+				return "#ff0000"
+				case 2:
+				return "#0000ff"
+				case 3:
+				return "#ff00ff"
+				default:
+				return "#00ff00"
+			}
+		}
+		function isButton(element) {
+			return (element.tagName==="BUTTON")
+		}
+		function createDice(value,point) {
+			let newDice=document.createElement("button")
+			newDice.type="button"
+			newDice.tabIndex=-1
+			newDice.setAttribute("class","dice")
+			newDice.setAttribute("onclick","clickDice(this)")
+			newDice.value=value
+			switch(point) {
+				case 1:
+				newDice.innerHTML="<svg viewBox='0 0 100 100' class='in-svg'><path d='M20 10L80 10A10 10 0 0 1 90 20L90 80A10 10 0 0 1 80 90L20 90A10 10 0 0 1 10 80L10 20A10 10 0 0 1 20 10'/><path class='fblack-path' d='M50 45A5 5 0 0 0 50 55A5 5 0 0 0 50 45'/></svg>1"
+				break
+				case 2:
+				newDice.innerHTML="<svg viewBox='0 0 100 100' class='in-svg'><path d='M20 10L80 10A10 10 0 0 1 90 20L90 80A10 10 0 0 1 80 90L20 90A10 10 0 0 1 10 80L10 20A10 10 0 0 1 20 10'/><path class='fblack-path' d='M50 30A5 5 0 0 0 50 40A5 5 0 0 0 50 30M50 60A5 5 0 0 0 50 70A5 5 0 0 0 50 60'/></svg>2"
+				break
+				case 3:
+				newDice.innerHTML="<svg viewBox='0 0 100 100' class='in-svg'><path d='M20 10L80 10A10 10 0 0 1 90 20L90 80A10 10 0 0 1 80 90L20 90A10 10 0 0 1 10 80L10 20A10 10 0 0 1 20 10'/><path class='fblack-path' d='M33 62A5 5 0 0 0 33 72A5 5 0 0 0 33 62M50 45A5 5 0 0 0 50 55A5 5 0 0 0 50 45M67 28A5 5 0 0 0 67 38A5 5 0 0 0 67 28'/></svg>3"
+				break
+				case 4:
+				newDice.innerHTML="<svg viewBox='0 0 100 100' class='in-svg'><path d='M20 10L80 10A10 10 0 0 1 90 20L90 80A10 10 0 0 1 80 90L20 90A10 10 0 0 1 10 80L10 20A10 10 0 0 1 20 10'/><path class='fblack-path' d='M35 30A5 5 0 0 0 35 40A5 5 0 0 0 35 30M65 30A5 5 0 0 0 65 40A5 5 0 0 0 65 30M35 60A5 5 0 0 0 35 70A5 5 0 0 0 35 60M65 60A5 5 0 0 0 65 70A5 5 0 0 0 65 60'/></svg>4"
+				break
+				case 5:
+				newDice.innerHTML="<svg viewBox='0 0 100 100' class='in-svg'><path d='M20 10L80 10A10 10 0 0 1 90 20L90 80A10 10 0 0 1 80 90L20 90A10 10 0 0 1 10 80L10 20A10 10 0 0 1 20 10'/><path class='fblack-path' d='M35 30A5 5 0 0 0 35 40A5 5 0 0 0 35 30M65 30A5 5 0 0 0 65 40A5 5 0 0 0 65 30M35 60A5 5 0 0 0 35 70A5 5 0 0 0 35 60M65 60A5 5 0 0 0 65 70A5 5 0 0 0 65 60M50 45A5 5 0 0 0 50 55A5 5 0 0 0 50 45'/></svg>5"
+				break
+				case 6:
+				newDice.innerHTML="<svg viewBox='0 0 100 100' class='in-svg'><path d='M20 10L80 10A10 10 0 0 1 90 20L90 80A10 10 0 0 1 80 90L20 90A10 10 0 0 1 10 80L10 20A10 10 0 0 1 20 10'/><path class='fblack-path' d='M35 28A5 5 0 0 0 35 38A5 5 0 0 0 35 28M65 28A5 5 0 0 0 65 38A5 5 0 0 0 65 28M35 45A5 5 0 0 0 35 55A5 5 0 0 0 35 45M65 45A5 5 0 0 0 65 55A5 5 0 0 0 65 45M35 62A5 5 0 0 0 35 72A5 5 0 0 0 35 62M65 62A5 5 0 0 0 65 72A5 5 0 0 0 65 62'/></svg>6"
+				break
+				default:
+				newDice.innerHTML="<svg viewBox='0 0 100 100' class='in-svg'><path d='M20 10L80 10A10 10 0 0 1 90 20L90 80A10 10 0 0 1 80 90L20 90A10 10 0 0 1 10 80L10 20A10 10 0 0 1 20 10'/></svg>?"
+			}
+			return newDice
+		}
+		function getDice(value) {
+			return document.querySelector("[value='"+value+"']")
+		}
+		function clickDice(button) {
+			if(animation) return
+			let buttonValue=parseInt(button.value)
+			return
+		}
+		function createGrid(value,x,y,text,size=0) {
+			let newGrid=document.createElement("button")
+			newGrid.type="button"
+			newGrid.tabIndex=-1
+			newGrid.setAttribute("class","grid")
+			if(size===-2) newGrid.setAttribute("class","mingrid")
+			if(size===-1) newGrid.setAttribute("class","sgrid")
+			if(size===179) newGrid.setAttribute("class","sgrid llmargin")
+			if(size===1) newGrid.setAttribute("class","bgrid")
+			newGrid.setAttribute("onclick","clickGrid(this)")
+			newGrid.value=value
+			newGrid.dataset.x=x
+			newGrid.dataset.y=y
+			newGrid.innerHTML="·"
+			if(typeof(text)==="string" && text.length===1 && text>="0" && text<="9") text=parseInt(text)
+			if(text==="Diamond") newGrid.innerHTML="<svg viewBox='0 0 100 100' class='in-svg'><path d='M50 10A40 40 0 0 0 50 90A40 40 0 0 0 50 10'/><path class='fgreen-path rline' d='M26 46L50 75L74 46L66 32L34 32ZL42 46L50 75L58 46L74 46M50 32L42 46L58 46Z'/></svg><span style='display: none'>Diamond</span>"
+			if(text==="Cross") newGrid.innerHTML="<svg viewBox='0 0 100 100' class='in-svg'><path d='M20 20L80 80M80 20L20 80'/></svg><span style='display: none'>Cross</span>"
+			if(text==="Line") newGrid.innerHTML="<svg viewBox='0 0 100 100' class='in-svg'><path d='M0 50L100 50'/></svg><span style='display: none'>Line</span>"
+			if(text==="Border") {
+				newGrid.style["border-radius"]=0
+				newGrid.style.border="5px solid"
+				newGrid.innerHTML=""
+			}
+			if(text==="Empty") newGrid.innerHTML="<span class='mid lgrey text3'>Empty</span>"
+			if(text==="Space") newGrid.innerHTML="<svg viewBox='0 0 100 100' class='in-svg'><path d='M0 20L0 0L20 0M80 0L100 0L100 20M100 80L100 100L80 100M20 100L0 100L0 80'/></svg><span class='mid lgrey text3'>Space</span>"
+			if(typeof(text)==="number" && text!==0) newGrid.innerHTML="<svg viewBox='0 0 100 100' class='in-svg'><path d='M50 10L90 50L50 90L10 50Z'/></svg><span class='mid'>"+text+"</span>"
+			if(typeof(text)==="string" && text.startsWith("Text_")) newGrid.innerHTML="<span class='mid'>"+text.slice(5)+"</span>"
+			return newGrid
+		}
+		function getGrid(value,x,y) {
+			return document.querySelector("[value='"+value+"'][data-x='"+x+"'][data-y='"+y+"']")
+		}
+		function clickGrid(button) {
+			if(animation) return
+			let buttonValue=parseInt(button.value),buttonX=parseInt(button.getAttribute("data-x")),buttonY=parseInt(button.getAttribute("data-y"))
+			if(buttonValue===0) {
+				clickSudoku(buttonX,buttonY)
+				return
+			}
+			return
+		}
+		function roll(lowerLimit,upperLimit) {
+			return Math.floor(Math.random()*(upperLimit-lowerLimit+1)+lowerLimit)
+		}
+		function roll2(lowerLimit,upperLimit) {
+			return approx(Math.random()*(upperLimit-lowerLimit)+lowerLimit)
+		}
+		function dice() {
+			return roll(1,6)
+		}
+		function determine(chance) {
+			if(chance<0) chance=0
+			if(chance>100) chance=100
+			let result=false
+			if(100*Math.random()<=chance) result=true
+			return result
+		}
+		function toCord(originCord,modulo=8) {
+			return (originCord%modulo+modulo-1)%modulo+1
+		}
+		function discalc(cord1,cord2,modulo=8) {
+			let differ=Math.abs(cord1-cord2)
+			if(modulo===0) return differ
+			differ%=modulo
+			if(modulo-differ<differ) differ=modulo-differ
+			return differ
+		}
+		function compareVectorCloser(v1,v2) {
+			if(v1.x**2+v1.y**2<v2.x**2+v2.y**2) return true
+			if(v1.x**2+v1.y**2>v2.x**2+v2.y**2) return false
+			let dir1=0,dir2=0
+			if(v1.x===0&&v1.y<0) dir1=1
+			if(v1.x>0) dir1=2
+			if(v1.x===0&&v1.y>0) dir1=3
+			if(v1.x<0) dir1=4
+			if(v2.x===0&&v2.y<0) dir2=1
+			if(v2.x>0) dir2=2
+			if(v2.x===0&&v2.y>0) dir2=3
+			if(v2.x<0) dir2=4
+			if(dir1<dir2) return true
+			if(dir1>dir2) return false
+			return (v1.y/v1.x<v2.y/v2.x)
+		}
+		let vecArray=new Array()
+		for(let i=-7;i<=7;i++) {
+			for(let j=-7;j<=7;j++) {
+				vecArray=vecArray.concat({x:i,y:j})
+			}
+		}
+		for(let i=0;i<vecArray.length;i++) {
+			for(let j=i+1;j<vecArray.length;j++) {
+				if(compareVectorCloser(vecArray[j],vecArray[i])) {
+					let tempVec=vecArray[j]
+					vecArray[j]=vecArray[i]
+					vecArray[i]=tempVec
+				}
+			}
+		}
+		let cogDegree=0
+		function cogRotate() {
+			if(document.getElementById("settings").style.display==="flex") {
+				cogDegree=(cogDegree+1)%360
+				document.getElementById("cog").style.transform="rotate("+cogDegree+"deg)"
+			}
+		}
+		function closeAll() {
+			if(document.getElementById("settings").style.display==="flex") settings(false)
+			if(document.getElementById("help").style.display==="flex") howToPlay(false)
+		}
+		function settings(open=true) {
+			if(animation) return
+			if(open && document.getElementById("settings").style.display==="flex") {
+				settings(false)
+				return
+			}
+			if(!open) {
+				document.getElementById("settings").style.display="none"
+				return
+			}
+			closeAll()
+			document.getElementById("settings").style.display="flex"
+			document.getElementById("option-content").innerHTML=""
+			document.getElementById("option-content").appendChild(settingButton(1,1,"English"))
+			document.getElementById("option-content").appendChild(settingButton(2,1,"Chinese"))
+		}
+		function settingButton(setX,setY,state) {
+			if(setX===1 && setY===1) {
+				let addButton=createGrid(1,setX,setY,"Text_English",1)
+				addButton.classList.add("white-bg","llmargin")
+				addButton.style.border="2px solid"
+				addButton.setAttribute("onclick","settingClick("+setX+","+setY+")")
+				return addButton
+			}
+			if(setX===2 && setY===1) {
+				let addButton=createGrid(1,setX,setY,"Text_中文",1)
+				addButton.classList.add("white-bg","llmargin")
+				addButton.style.border="2px solid"
+				addButton.setAttribute("onclick","settingClick("+setX+","+setY+")")
+				return addButton
+			}
+		}
+		function settingClick(setX,setY) {
+			if(animation) return
+			if(setX===1 && setY===1) {
+				setting.language="English"
+				setSetting()
+				safeReload()
+			}
+			if(setX===2 && setY===1) {
+				setting.language="Chinese"
+				setSetting()
+				safeReload()
+			}
+		}
+		function howToPlay(open=true) {
+			if(animation) return
+			if(open && document.getElementById("help").style.display==="flex") {
+				howToPlay(false)
+				return
+			}
+			if(!open) {
+				if(sudokuEditX>0) {
+					clickSudoku(sudokuEditX,sudokuEditY)
+				}
+				document.getElementById("help").style.display="none"
+				document.getElementById("helpsvg").setAttribute("d","M50 2A48 48 0 0 0 50 98A48 48 0 0 0 50 2M35 35A15 15 0 1 1 59 47A22.5 22.5 0 0 0 50 65")
+				return
+			}
+			closeAll()
+			document.getElementById("help").style.display="flex"
+			document.getElementById("helpsvg").setAttribute("d","M50 2A48 48 0 0 0 50 98A48 48 0 0 0 50 2M50 18L50 62")
+		}
+		let sudokuList=new Array(),sudokuDisplay=5,sudokuEditX,sudokuEditY,tempSudoku
+		sudokuList[1]=[," /4//62"," 3//654"," /56231"," 521//6"," //41/5"," 2//413"]
+		sudokuList[2]=[," 5/1/4/"," 26///4"," 6/4125"," 31/4/2"," 456/3/"," 1/265/"]
+		sudokuList[3]=[," 2//456"," 6///31"," //2614"," 1465//"," //5/42"," 4213/5"]
+		sudokuList[4]=[," 526341"," 3/1///"," 1/4/62"," /1/456"," 4/2/35"," /452//"]
+		sudokuList[5]=[," 234///"," 1562//"," 3/56/4"," /4/135"," 52/416"," 4/1//2"]
+		function nextSudoku() {
+			sudokuDisplay=sudokuDisplay%5+1
+			sudokuEditX=0
+			sudokuEditY=0
+			document.getElementById("sudoku-table").innerHTML=""
+			tempSudoku=structuredClone(sudokuList[sudokuDisplay])
+			for(let i=1;i<=6;i++) for(let j=1;j<=6;j++) {
+				document.getElementById("sudoku-table").appendChild(createGrid(0,i,j,sudokuList[sudokuDisplay][i][j]))
+			}
+		}
+		function clickSudoku(clickX,clickY) {
+			if(sudokuEditX===clickX && sudokuEditY===clickY) {
+				getGrid(0,sudokuEditX,sudokuEditY).classList.remove("llyellow-bg")
+				sudokuEditX=0
+				sudokuEditY=0
+				return
+			}
+			if(sudokuEditX>0) {
+				getGrid(0,sudokuEditX,sudokuEditY).classList.remove("llyellow-bg")
+			}
+			sudokuEditX=clickX
+			sudokuEditY=clickY
+			getGrid(0,sudokuEditX,sudokuEditY).classList.add("llyellow-bg")
+		}
+		function tryInput(num) {
+			if(animation) return
+			if(num>=1 && num<=6 && sudokuEditX>0) {
+				if(sudokuList[sudokuDisplay][sudokuEditX][sudokuEditY]!=="/") return
+				tempSudoku[sudokuEditX]=tempSudoku[sudokuEditX].split("").with(sudokuEditY,""+num).join("")
+				let newGrid=createGrid(0,sudokuEditX,sudokuEditY,"Text_"+num)
+				newGrid.classList.add("llyellow-bg")
+				getGrid(0,sudokuEditX,sudokuEditY).replaceWith(newGrid)
+			}
+			if((num===0 || num===10) && sudokuEditX>0) {
+				if(sudokuList[sudokuDisplay][sudokuEditX][sudokuEditY]!=="/") return
+				if(tempSudoku[sudokuEditX][sudokuEditY]==="/") return
+				tempSudoku[sudokuEditX]=tempSudoku[sudokuEditX].split("").with(sudokuEditY,"/").join("")
+				let newGrid=createGrid(0,sudokuEditX,sudokuEditY)
+				newGrid.classList.add("llyellow-bg")
+				getGrid(0,sudokuEditX,sudokuEditY).replaceWith(newGrid)
+			}
+		}
+		let inputArray=["0","1","2","3","4","5","6","7","8","9","backspace"]
+		document.addEventListener("keydown",function(pressed) {
+			if(inputArray.indexOf(pressed.key.toLowerCase())>=0) {
+				tryInput(inputArray.indexOf(pressed.key.toLowerCase()))
+				return
+			}
+		} )
+		function createLeftList() {
+			let newList=document.createElement("div")
+			newList.classList.add("llpurple-bg","list-container")
+			newList.style.left="5%"
+			newList.appendChild(document.createElement("div"))
+			newList.lastChild.classList.add("green-bg","list-box","cflex","csub")
+			newList.lastChild.innerHTML="<h2>"+translateText("My Games")+"</h2><span>"+translateText("Top are the latest updated ones")+"</span><br>"
+			newList.appendChild(document.createElement("div"))
+			newList.lastChild.classList.add("llpurple-bg","list-box","rflex")
+			newList.lastChild.innerHTML="<div style='width: 30%'><svg viewBox='0 0 100 100' class='inner-svg'><path class='fwhite-path ns' d='M0 0L100 0L100 100L0 100Z'/><path class='wide' d='M50 10A40 40 0 0 0 50 90A40 40 0 0 0 50 10'/><path class='fgreen-path mwidth rline' d='M26 46L50 75L74 46L66 32L34 32ZL42 46L50 75L58 46L74 46M50 32L42 46L58 46Z'/></svg></div><div class='cflex csub' style='width: 70%'><h2><a href='https://pflfgame.github.io/Virus1' target='_blank'>Virus 1</a></h2><span>"+translateText("Fight virus on a 6*6 board.")+"</span><span>"+translateText("Last updated at ")+"20260715</span><div class='cmargin bar-container'><div class='bar' style='width: 40%'></div><span class='bar-text'>20/50?"+translateText(" complete")+"</span></div></div>"
+			newList.appendChild(document.createElement("div"))
+			newList.lastChild.classList.add("llyellow-bg","list-box","rflex")
+			newList.lastChild.innerHTML="<div style='width: 30%'><svg viewBox='0 0 100 100' class='inner-svg'><path class='fyellow-path ns' d='M0 0L100 0L100 100L0 100Z'/><path class='wide' d='M18 66A40 40 0 0 0 82 66M30 18L30 50M70 18L70 50'/></svg></div><div class='cflex csub' style='width: 70%'><h2><a href='https://pflfgame.github.io/Florroom-Legacy' target='_blank'>Florroom Legacy</a></h2><span>"+translateText("The legacy version of Florroom.")+"</span><span>"+translateText("Last updated at ")+"20260713</span><div class='cmargin bar-container'><div class='bar' style='width: 100%'></div><span class='bar-text'>"+translateText("Completed")+"</span></div></div>"
+			newList.appendChild(document.createElement("div"))
+			newList.lastChild.classList.add("llyellow-bg","list-box","rflex")
+			newList.lastChild.innerHTML="<div style='width: 30%'><svg viewBox='0 0 100 100' class='inner-svg'><path class='wide' d='M50 2A48 48 0 0 0 50 98A48 48 0 0 0 50 2'/><path class='fyellow-path' d='M50 20A30 30 0 0 0 50 80A30 30 0 0 0 50 20M34 58A20 20 0 0 0 66 58M40 34L40 50M60 34L60 50'/></svg></div><div class='cflex csub' style='width: 70%'><h2><a href='https://pflfgame.github.io/Florroom' target='_blank'>Florroom</a></h2><span>"+translateText("Florr-based card game.")+"</span><span>"+translateText("Last updated at ")+"20260626</span><div class='cmargin bar-container'><div class='bar' style='width: 28.5714%'></div><span class='bar-text'>2/7"+translateText(" complete")+"</span></div></div>"
+			newList.appendChild(document.createElement("div"))
+			newList.lastChild.classList.add("llcyan-bg","list-box","rflex")
+			newList.lastChild.innerHTML="<div style='width: 30%'><svg viewBox='0 0 100 100' class='inner-svg'><path class='flgrey-path ns' d='M48 20L52 20L52 80L48 80ZM20 48L80 48L80 52L20 52Z'/><path class='fgreen-path ns' d='M40 10L60 10L60 30L40 30ZM10 40L30 40L30 60L10 60Z'/><path class='fyellow-path ns' d='M40 40L60 40L60 60L40 60ZM40 70L60 70L60 90L40 90Z'/><path class='fblue-path ns' d='M70 40L90 40L90 60L70 60Z'/><path class='lgrey-path fwhite-path mwidth' d='M50 14A6 6 0 0 0 50 26A6 6 0 0 0 50 14M20 44A6 6 0 0 0 20 56A6 6 0 0 0 20 44M50 44A6 6 0 0 0 50 56A6 6 0 0 0 50 44M80 44A6 6 0 0 0 80 56A6 6 0 0 0 80 44M50 74A6 6 0 0 0 50 86A6 6 0 0 0 50 74'/></svg></div><div class='cflex csub' style='width: 70%'><h2><a href='https://pflfgame.github.io/Petal-Crush' target='_blank'>Petal Crush</a></h2><span>"+translateText("Florr-based 3-match game.")+"</span><span>"+translateText("Last updated at ")+"20260322</span><div class='cmargin bar-container'><div class='bar' style='width: 15%'></div><span class='bar-text'>1(7)/?(?)"+translateText(" complete")+"</span></div></div>"
+			newList.appendChild(document.createElement("div"))
+			newList.lastChild.classList.add("lblue-bg","list-box","rflex")
+			newList.lastChild.innerHTML="<div style='width: 30%'><svg viewBox='0 0 100 100' class='inner-svg'><path class='flpurple-path ns' d='M0 0L100 0L100 100L0 100Z'/><path class='fblack-path ns' d='M30 22A8 8 0 0 0 30 38A8 8 0 0 0 30 22M70 22A8 8 0 0 0 70 38A8 8 0 0 0 70 22M50 42A8 8 0 0 0 50 58A8 8 0 0 0 50 42M30 62A8 8 0 0 0 30 78A8 8 0 0 0 30 62M70 62A8 8 0 0 0 70 78A8 8 0 0 0 70 62'/></svg></div><div class='cflex csub' style='width: 70%'><h2><a href='https://pflfgame.github.io/PFLF' target='_blank'>PFLF</a></h2><span>"+translateText("I play PFLF everyday :D")+"</span><span>"+translateText("Last updated at ")+"20260313</span><div class='cmargin bar-container'><div class='bar' style='width: 100%'></div><span class='bar-text'>"+translateText("Completed")+"</span></div></div>"
+			document.body.appendChild(newList)
+		}
+		function createRightList() {
+			let newList=document.createElement("div")
+			newList.classList.add("llpurple-bg","list-container")
+			newList.style.right="5%"
+			newList.appendChild(document.createElement("div"))
+			newList.lastChild.classList.add("green-bg","list-box","cflex","csub")
+			newList.lastChild.innerHTML="<h2>"+translateText("Todo")+"</h2><span>"+translateText("What will be updated next")+"</span><br>"
+			newList.appendChild(document.createElement("div"))
+			newList.lastChild.classList.add("llyellow-bg","list-box","rflex")
+			newList.lastChild.innerHTML="<div style='width: 30%'><svg viewBox='0 0 100 100' class='inner-svg'><path class='wide' d='M50 2A48 48 0 0 0 50 98A48 48 0 0 0 50 2'/><path class='fyellow-path' d='M50 20A30 30 0 0 0 50 80A30 30 0 0 0 50 20M34 58A20 20 0 0 0 66 58M40 34L40 50M60 34L60 50'/></svg></div><div class='cflex csub' style='width: 70%'><h2><a href='https://pflfgame.github.io/Florroom' target='_blank'>Florroom</a></h2><span>"+translateText("Will be updated at ")+"~20260731?</span><div class='cmargin bar-container'><div class='yellow-bg bar apos' style='width: 42.8571%'></div><div class='bar apos' style='width: 28.5714%'></div><span class='bar-text'>2-&gt;3"+translateText(" to complete")+"</span></div></div>"
+			newList.appendChild(document.createElement("div"))
+			newList.lastChild.classList.add("llcyan-bg","list-box","rflex")
+			newList.lastChild.innerHTML="<div style='width: 30%'><svg viewBox='0 0 100 100' class='inner-svg'><path class='flgrey-path ns' d='M48 20L52 20L52 80L48 80ZM20 48L80 48L80 52L20 52Z'/><path class='fgreen-path ns' d='M40 10L60 10L60 30L40 30ZM10 40L30 40L30 60L10 60Z'/><path class='fyellow-path ns' d='M40 40L60 40L60 60L40 60ZM40 70L60 70L60 90L40 90Z'/><path class='fblue-path ns' d='M70 40L90 40L90 60L70 60Z'/><path class='lgrey-path fwhite-path mwidth' d='M50 14A6 6 0 0 0 50 26A6 6 0 0 0 50 14M20 44A6 6 0 0 0 20 56A6 6 0 0 0 20 44M50 44A6 6 0 0 0 50 56A6 6 0 0 0 50 44M80 44A6 6 0 0 0 80 56A6 6 0 0 0 80 44M50 74A6 6 0 0 0 50 86A6 6 0 0 0 50 74'/></svg></div><div class='cflex csub' style='width: 70%'><h2><a href='https://pflfgame.github.io/Petal-Crush' target='_blank'>Petal Crush</a></h2><span>"+translateText("Will be updated at ")+"~20260805?</span><div class='cmargin bar-container'><div class='yellow-bg bar apos' style='width: 25%'></div><div class='bar apos' style='width: 15%'></div><span class='bar-text'>1-&gt;2"+translateText(" to complete")+"</span></div></div>"
+			document.body.appendChild(newList)
+		}
+		window.onload=async function() {
+			if(setting.language==="Chinese") {
+				translateAll()
+			}
+			setInterval(cogRotate,10)
+			nextSudoku()
+			createLeftList()
+			createRightList()
+		}
+		function removeTempGrid() {
+			document.querySelectorAll("[value='79']").forEach(grid => grid.remove())
+		}
+		function collapseTempGrid() {
+			document.querySelectorAll("[value='79']").forEach(grid => collapseGrid(grid))
+		}
+		async function collapseGrid(grid) {
+			animation=true
+			let gridValue=parseInt(grid.getAttribute("value")),gridX=parseInt(grid.dataset.x),gridY=parseInt(grid.dataset.y)
+			for(let i=0;i<=20;i++) {
+				grid.style.scale=1-i/20
+				await delay(50)
+			}
+			await delay(200)
+			grid.remove()
+			animation=false
+		}
+		async function squeezeGrid(grid) {
+			animation=true
+			for(let i=0;i<=20;i++) {
+				grid.style.scale=Math.abs(i-10)/20+0.5
+				await delay(50)
+			}
+			animation=false
+		}
+	</script>
+	<script>
+		function translateText(text,detail) {
+			if(savesetting.language==="Chinese" && detail==="EN") return ""
+			if(savesetting.language!=="Chinese" && detail==="CH") return ""
+			if(savesetting.language!=="Chinese") return text
+			switch(text) {
+				case "The game is perfect, there are no bugs": return "这个（定冠词）游戏（名词）是（系动词）完美的（形容词），存在（副词）有（系动词）零（Clear! Score+1000）漏洞（名词）"
+				case ".": return "。"
+				case "My Games": return "我的游戏"
+				case "Top are the latest updated ones": return "新更新的游戏在顶部"
+				case "Last updated at ": return "上次更新在"
+				case "Completed": return "已完成"
+				case " complete": return "完成"
+				case "Todo": return "待办事项"
+				case "What will be updated next": return "接下来将会更新的"
+				case "Will be updated at ": return "下次更新将于"
+				case " to complete": return "待完成"
+				case "I play PFLF everyday :D": return "PFLF是对的。"
+				case "Fight virus on a 6*6 board.": return "在6*6的棋盘上和病毒战斗。"
+				case "Florr-based card game.": return "florr二次创作，卡牌游戏。"
+				case "Florr-based 3-match game.": return "florr二次创作，三消游戏。"
+				case "The legacy version of Florroom.": return "Florroom怀旧版。"
+				default: return text
+			}
+		}
+		function translateAll() {
+			if(savesetting.language!=="Chinese") return
+			document.getElementById("option-title").innerHTML="设置"
+			document.getElementById("book-title").innerHTML="谜题"
+			document.getElementById("book-content").innerHTML="<h3>神秘数独</h3><span><span class='bold' onclick='nextSudoku()'>它们</span>有些许联系...</span><br><div id='sudoku-table' class='square36'></div>"
+			document.getElementById("welcome").innerHTML="欢迎来到<span class='blue'>P</span><span class='red'>F</span><span class='green'>L</span><span class='red'>F</span>的个人主页！"
+		}
+	</script>
+	<script>
+		const perfectGame="The game is perfect, there are no bugs"
+		console.log(translateText(perfectGame))
+	</script>
+</head>
+<body>
+	<div class="tl">
+		<button type="button" tabindex="-1" onclick="settings()" class="circbtn" title="Settings">
+			<svg id="cog" viewBox="0 0 100 100" class="in-svg">
+				<path d="M50 2A48 48 0 0 0 50 98A48 48 0 0 0 50 2"/>
+				<path class="fblack-path" d="M50 30A20 20 0 0 0 50 70L50 60A10 10 0 0 1 50 40L50 30A20 20 0 0 1 50 70L50 60A10 10 0 0 0 50 40Z"/>
+				<path class="fblack-path" d="M45 22L55 22L55 35L45 35ZM78 45L78 55L65 55L65 45ZM55 78L45 78L45 65L55 65ZM22 55L22 45L35 45L35 55Z"/>
+				<path class="diag fblack-path" d="M45 22L55 22L55 35L45 35ZM78 45L78 55L65 55L65 45ZM55 78L45 78L45 65L55 65ZM22 55L22 45L35 45L35 55Z"/>
+			</svg>
+		</button>
+	</div>
+	<div class="tr">
+		<button type="button" tabindex="-1" onclick="howToPlay()" class="circbtn" title="How to play">
+			<svg viewBox="0 0 100 100" class="in-svg">
+				<path id="helpsvg" d="M50 2A48 48 0 0 0 50 98A48 48 0 0 0 50 2M35 35A15 15 0 1 1 59 47A22.5 22.5 0 0 0 50 65"/>
+				<path class="fblack-path" d="M50 75A4 4 0 0 0 50 83A4 4 0 0 0 50 75"/>
+			</svg>
+		</button>
+	</div>
+	<div id="settings" class="mid grey-bg box highz hsize nd">
+		<h2 id="option-title">Settings</h2>
+		<div id="option-content">
+		</div>
+	</div>
+	<div id="help" class="mid llpurple-bg box highz hsize nd">
+		<h2 id="book-title">Puzzle</h2>
+		<div id="book-content" class="cflex csub">
+			<h3>Mysterious Sudoku</h3>
+			<span><span class="bold" onclick="nextSudoku()">They</span> are somehow related...</span>
+			<br>
+			<div id="sudoku-table" class="square36"></div>
+		</div>
+		<br>
+		<span class="nowrap">🎲🎲🎲🎲🎲🎲🎲🎲🎲🎲🎲🎲🎲🎲🎲🎲</span>
+		<br>
+		<span>六三六一等于七十九的平方</span>
+		<br>
+		<span>QQ: 807581283</span>
+		<br>
+	</div>
+	<span id='welcome' class='grey rmid lcmargin text1 bold'>Welcome to <span class='blue'>P</span><span class='red'>F</span><span class='green'>L</span><span class='red'>F</span>'s home page!</span>
+</body>
