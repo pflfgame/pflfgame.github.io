@@ -63,6 +63,15 @@
 		.smid {
 			transform: translate(-50%,-50%);
 		}
+		.moveup {
+			margin-top: -1em;
+		}
+		.upper {
+			transform: translate(0px,-1em);
+		}
+		.lower {
+			transform: translate(0px,1em);
+		}
 		.bottom {
 			position: absolute;
 			top: 100%;
@@ -902,6 +911,9 @@
 			display: flex;
 			flex-direction: column;
 		}
+		.inline {
+			display: inline-block;
+		}
 		.mcont {
 			width: max-content;
 		}
@@ -1300,16 +1312,16 @@
 			newList.lastChild.innerHTML="<h2>"+translateText("My Games")+"</h2><span>"+translateText("Top are the latest updated ones")+"</span><br>"
 			newList.appendChild(document.createElement("div"))
 			newList.lastChild.classList.add("llpurple-bg","list-box","rflex")
-			newList.lastChild.innerHTML="<div style='width: 30%'><svg viewBox='0 0 100 100' class='inner-svg'><path class='fwhite-path ns' d='M0 0L100 0L100 100L0 100Z'/><path class='wide' d='M50 10A40 40 0 0 0 50 90A40 40 0 0 0 50 10'/><path class='fgreen-path mwidth rline' d='M26 46L50 75L74 46L66 32L34 32ZL42 46L50 75L58 46L74 46M50 32L42 46L58 46Z'/></svg></div><div class='cflex csub' style='width: 70%'><h2><a href='https://pflfgame.github.io/Virus1' target='_blank'>Virus 1</a></h2><span>"+translateText("Fight virus on a 6*6 board.")+"</span><span>"+translateText("Last updated at ")+"20260715</span><div class='cmargin bar-container'><div class='bar' style='width: 40%'></div><span class='bar-text'>20/50?"+translateText(" complete")+"</span></div></div>"
+			newList.lastChild.innerHTML="<div style='width: 30%'><svg viewBox='0 0 100 100' class='inner-svg'><path class='fwhite-path ns' d='M0 0L100 0L100 100L0 100Z'/><path class='wide' d='M50 10A40 40 0 0 0 50 90A40 40 0 0 0 50 10'/><path class='fgreen-path mwidth rline' d='M26 46L50 75L74 46L66 32L34 32ZL42 46L50 75L58 46L74 46M50 32L42 46L58 46Z'/></svg></div><div class='cflex csub' style='width: 70%'><h2><a href='https://pflfgame.github.io/Virus1' target='_blank'>Virus 1</a></h2><span>"+translateText("Fight virus on a 6*6 board.")+"</span><span>"+translateText("Last updated at ")+"20260721</span><div class='cmargin bar-container'><div class='bar' style='width: 40%'></div><span class='bar-text'>20/50?"+translateText(" complete")+"</span></div></div>"
 			newList.appendChild(document.createElement("div"))
 			newList.lastChild.classList.add("llyellow-bg","list-box","rflex")
-			newList.lastChild.innerHTML="<div style='width: 30%'><svg viewBox='0 0 100 100' class='inner-svg'><path class='fyellow-path ns' d='M0 0L100 0L100 100L0 100Z'/><path class='wide' d='M18 66A40 40 0 0 0 82 66M30 18L30 50M70 18L70 50'/></svg></div><div class='cflex csub' style='width: 70%'><h2><a href='https://pflfgame.github.io/Florroom-Legacy' target='_blank'>Florroom Legacy</a></h2><span>"+translateText("The legacy version of Florroom.")+"</span><span>"+translateText("Last updated at ")+"20260713</span><div class='cmargin bar-container'><div class='bar' style='width: 100%'></div><span class='bar-text'>"+translateText("Completed")+"</span></div></div>"
+			newList.lastChild.innerHTML="<div style='width: 30%'><svg viewBox='0 0 100 100' class='inner-svg'><path class='fyellow-path ns' d='M0 0L100 0L100 100L0 100Z'/><path class='wide' d='M18 66A40 40 0 0 0 82 66M30 18L30 50M70 18L70 50'/></svg></div><div class='cflex csub' style='width: 70%'><h2><a href='https://pflfgame.github.io/Florroom-Legacy' target='_blank'>Florroom Legacy</a></h2><span>"+translateText("The legacy version of Florroom.")+"</span><span>"+translateText("Last updated at ")+"20260713</span><div class='cmargin bar-container'><div class='bar' style='width: 100%'></div><span class='bar-text'>"+translateText("Completed")+"</span></div><span class='upper'><a href='https://florrio.fandom.com/zh/wiki/%E4%BA%8C/Florroom_Legacy' target='_blank'>Wiki</a></span></div>"
 			newList.appendChild(document.createElement("div"))
 			newList.lastChild.classList.add("llyellow-bg","list-box","rflex")
-			newList.lastChild.innerHTML="<div style='width: 30%'><svg viewBox='0 0 100 100' class='inner-svg'><path class='wide' d='M50 2A48 48 0 0 0 50 98A48 48 0 0 0 50 2'/><path class='fyellow-path' d='M50 20A30 30 0 0 0 50 80A30 30 0 0 0 50 20M34 58A20 20 0 0 0 66 58M40 34L40 50M60 34L60 50'/></svg></div><div class='cflex csub' style='width: 70%'><h2><a href='https://pflfgame.github.io/Florroom' target='_blank'>Florroom</a></h2><span>"+translateText("Florr-based card game.")+"</span><span>"+translateText("Last updated at ")+"20260626</span><div class='cmargin bar-container'><div class='bar' style='width: 28.5714%'></div><span class='bar-text'>2/7"+translateText(" complete")+"</span></div></div>"
+			newList.lastChild.innerHTML="<div style='width: 30%'><svg viewBox='0 0 100 100' class='inner-svg'><path class='wide' d='M50 2A48 48 0 0 0 50 98A48 48 0 0 0 50 2'/><path class='fyellow-path' d='M50 20A30 30 0 0 0 50 80A30 30 0 0 0 50 20M34 58A20 20 0 0 0 66 58M40 34L40 50M60 34L60 50'/></svg></div><div class='cflex csub' style='width: 70%'><h2><a href='https://pflfgame.github.io/Florroom' target='_blank'>Florroom</a></h2><span>"+translateText("Florr-based card game.")+"</span><span>"+translateText("Last updated at ")+"20260626</span><div class='cmargin bar-container'><div class='bar' style='width: 28.5714%'></div><span class='bar-text'>2/7"+translateText(" complete")+"</span></div><span class='upper'><a href='https://florrio.fandom.com/zh/wiki/%E4%BA%8C/Florroom' target='_blank'>Wiki</a></span></div>"
 			newList.appendChild(document.createElement("div"))
 			newList.lastChild.classList.add("llcyan-bg","list-box","rflex")
-			newList.lastChild.innerHTML="<div style='width: 30%'><svg viewBox='0 0 100 100' class='inner-svg'><path class='flgrey-path ns' d='M48 20L52 20L52 80L48 80ZM20 48L80 48L80 52L20 52Z'/><path class='fgreen-path ns' d='M40 10L60 10L60 30L40 30ZM10 40L30 40L30 60L10 60Z'/><path class='fyellow-path ns' d='M40 40L60 40L60 60L40 60ZM40 70L60 70L60 90L40 90Z'/><path class='fblue-path ns' d='M70 40L90 40L90 60L70 60Z'/><path class='lgrey-path fwhite-path mwidth' d='M50 14A6 6 0 0 0 50 26A6 6 0 0 0 50 14M20 44A6 6 0 0 0 20 56A6 6 0 0 0 20 44M50 44A6 6 0 0 0 50 56A6 6 0 0 0 50 44M80 44A6 6 0 0 0 80 56A6 6 0 0 0 80 44M50 74A6 6 0 0 0 50 86A6 6 0 0 0 50 74'/></svg></div><div class='cflex csub' style='width: 70%'><h2><a href='https://pflfgame.github.io/Petal-Crush' target='_blank'>Petal Crush</a></h2><span>"+translateText("Florr-based 3-match game.")+"</span><span>"+translateText("Last updated at ")+"20260322</span><div class='cmargin bar-container'><div class='bar' style='width: 15%'></div><span class='bar-text'>1(7)/?(?)"+translateText(" complete")+"</span></div></div>"
+			newList.lastChild.innerHTML="<div style='width: 30%'><svg viewBox='0 0 100 100' class='inner-svg'><path class='flgrey-path ns' d='M48 20L52 20L52 80L48 80ZM20 48L80 48L80 52L20 52Z'/><path class='fgreen-path ns' d='M40 10L60 10L60 30L40 30ZM10 40L30 40L30 60L10 60Z'/><path class='fyellow-path ns' d='M40 40L60 40L60 60L40 60ZM40 70L60 70L60 90L40 90Z'/><path class='fblue-path ns' d='M70 40L90 40L90 60L70 60Z'/><path class='lgrey-path fwhite-path mwidth' d='M50 14A6 6 0 0 0 50 26A6 6 0 0 0 50 14M20 44A6 6 0 0 0 20 56A6 6 0 0 0 20 44M50 44A6 6 0 0 0 50 56A6 6 0 0 0 50 44M80 44A6 6 0 0 0 80 56A6 6 0 0 0 80 44M50 74A6 6 0 0 0 50 86A6 6 0 0 0 50 74'/></svg></div><div class='cflex csub' style='width: 70%'><h2><a href='https://pflfgame.github.io/Petal-Crush' target='_blank'>Petal Crush</a></h2><span>"+translateText("Florr-based 3-match game.")+"</span><span>"+translateText("Last updated at ")+"20260322</span><div class='cmargin bar-container'><div class='bar' style='width: 15%'></div><span class='bar-text'>1(7)/?(?)"+translateText(" complete")+"</span></div><span class='upper'><a href='https://florrio.fandom.com/zh/wiki/%E4%BA%8C/Petal_Crush' target='_blank'>Wiki</a></span></div>"
 			newList.appendChild(document.createElement("div"))
 			newList.lastChild.classList.add("lblue-bg","list-box","rflex")
 			newList.lastChild.innerHTML="<div style='width: 30%'><svg viewBox='0 0 100 100' class='inner-svg'><path class='flpurple-path ns' d='M0 0L100 0L100 100L0 100Z'/><path class='fblack-path ns' d='M30 22A8 8 0 0 0 30 38A8 8 0 0 0 30 22M70 22A8 8 0 0 0 70 38A8 8 0 0 0 70 22M50 42A8 8 0 0 0 50 58A8 8 0 0 0 50 42M30 62A8 8 0 0 0 30 78A8 8 0 0 0 30 62M70 62A8 8 0 0 0 70 78A8 8 0 0 0 70 62'/></svg></div><div class='cflex csub' style='width: 70%'><h2><a href='https://pflfgame.github.io/PFLF' target='_blank'>PFLF</a></h2><span>"+translateText("I play PFLF everyday :D")+"</span><span>"+translateText("Last updated at ")+"20260313</span><div class='cmargin bar-container'><div class='bar' style='width: 100%'></div><span class='bar-text'>"+translateText("Completed")+"</span></div></div>"
