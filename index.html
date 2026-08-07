@@ -1308,24 +1308,26 @@
 		digitArray=[...new Set(digitArray)]
 		const TagList=new Array()
 		TagList.push({name:"Exactly",chname:"刚刚好",des:"Exactly 6361.",chdes:"正好6361。",count:1,score:10000,color:"#555555"})
-		TagList.push({name:"8-slice",chname:"8位片段",des:"Contains 8-length slice of 266^6",chdes:"包含266^6的8位片段。",count:8,score:3536,color:"#ff2b75"})
+		TagList.push({name:"8-slice",chname:"8位片段",des:"Contains 8-length slice of 266^6.",chdes:"包含266^6的8位片段。",count:8,score:3536,color:"#ff2b75"})
 		TagList.push({name:"PFLF",chname:"PFLF",des:"The number is 6th power.",chdes:"6次方数。",count:21,score:2182,color:"#ff2b75"})
 		TagList.push({name:"Full",chname:"完全",des:"All digits are same.",chdes:"所有的数码相同。",count:72,score:1179,color:"#ff2b75"})
 		TagList.push({name:"Multiple of PFLF",chname:"PFLF的倍数",des:"Gets integer when divided by (PFLF)<sub>36</sub>=1186611.",chdes:"除以(PFLF)<sub>36</sub>=1186611得到整数。",count:84,score:1091,color:"#ff2b75"})
-		TagList.push({name:"7-slice",chname:"7位片段",des:"Contains 7-length slice of 266^6",chdes:"包含266^6的7位片段。",count:172,score:762,color:"#1fdbde"})
+		TagList.push({name:"1/79",chname:"1/79",des:"Can be found within 1/79.",chdes:"可以在1/79中找到。",count:91,score:1048,color:"#ff2b75"})
+		TagList.push({name:"7-slice",chname:"7位片段",des:"Contains 7-length slice of 266^6.",chdes:"包含266^6的7位片段。",count:172,score:762,color:"#1fdbde"})
 		TagList.push({name:"LF",chname:"LF",des:"The number is cubic.",chdes:"立方数。",count:464,score:464,color:"#1fdbde"})
-		TagList.push({name:"Two-digit enthusiast",chname:"两位数狂热",des:"Contains 16,25,36,64",chdes:"包含16，25，36，64。",count:498,score:448,color:"#1fdbde"})
+		TagList.push({name:"Two-digit enthusiast",chname:"两位数狂热",des:"Contains 16,25,36,64.",chdes:"包含16，25，36，64。",count:498,score:448,color:"#1fdbde"})
 		TagList.push({name:"Internal PFLF",chname:"内部PFLF",des:"The internal number is 6th power.",chdes:"内部的数字为6次方数。",count:810,score:351,color:"#1fdbde"})
 		TagList.push({name:"79*3",chname:"79*3",des:"Contains three 79.",chdes:"包含三个79。",count:997,score:317,color:"#1fdbde"})
-		TagList.push({name:"Remain",chname:"余留",des:"Contains at most 2 non-zero digits",chdes:"包含至多2个非0数位。",count:2340,score:207,color:"#de1f1f"})
-		TagList.push({name:"6-slice",chname:"6位片段",des:"Contains 6-length slice of 266^6",chdes:"包含266^6的6位片段。",count:2820,score:188,color:"#de1f1f"})
+		TagList.push({name:"Remain",chname:"余留",des:"Contains at most 2 non-zero digits.",chdes:"包含至多2个非0数位。",count:2340,score:207,color:"#de1f1f"})
+		TagList.push({name:"6-slice",chname:"6位片段",des:"Contains 6-length slice of 266^6.",chdes:"包含266^6的6位片段。",count:2820,score:188,color:"#de1f1f"})
 		TagList.push({name:"Large sum",chname:"巨大的和",des:"The sum of digits is over 64.",chdes:"数位求和大于64。",count:6435,score:125,color:"#de1f1f"})
+		TagList.push({name:"1/6361",chname:"1/6361",des:"Can be found within 1/6361.",chdes:"可以在1/6361中找到。",count:7967,score:112,color:"#de1f1f"})
 		TagList.push({name:"Internal LF",chname:"内部LF",des:"The internal number is cubic.",chdes:"内部的数字为立方数。",count:8910,score:106,color:"#de1f1f"})
 		TagList.push({name:"Large",chname:"大数字",des:"All digits are over 6.",chdes:"所有数码超过6。",count:9840,score:101,color:"#de1f1f"})
 		TagList.push({name:"PF",chname:"PF",des:"The number is square.",chdes:"平方数。",count:9999,score:100,color:"#de1f1f"})
 		TagList.push({name:"Multiple of 6361",chname:"6361的倍数",des:"Gets integer when divided by 6361.",chdes:"除以6361得到整数。",count:15720,score:80,color:"#de1f1f"})
-		TagList.push({name:"Main number",chname:"主数",des:"Only has 2 type of digits.",chdes:"只有两种数码。",count:20079,score:71,color:"#de1f1f"})
-		TagList.push({name:"5-slice",chname:"5位片段",des:"Contains 5-length slice of 266^6",chdes:"包含266^6的5位片段。",count:40999,score:49,color:"#861fde"})
+		TagList.push({name:"Main number",chname:"主数",des:"Only has 2 types of digits.",chdes:"只有两种数码。",count:20079,score:71,color:"#de1f1f"})
+		TagList.push({name:"5-slice",chname:"5位片段",des:"Contains 5-length slice of 266^6.",chdes:"包含266^6的5位片段。",count:40999,score:49,color:"#861fde"})
 		TagList.push({name:"7-claim",chname:"7位收取",des:"Contains 7-digit square or cubic number.",chdes:"包含7位平方数或立方数。",count:43196,score:48,color:"#861fde"})
 		TagList.push({name:"79^2?",chname:"79^2?",des:"Contains 6361.",chdes:"包含6361。",count:49999,score:45,color:"#861fde"})
 		TagList.push({name:"79^2??",chname:"79^2??",des:"Contains 6241.",chdes:"包含6241。",count:49999,score:45,color:"#861fde"})
@@ -1335,23 +1337,25 @@
 		TagList.push({name:"79*2",chname:"79*2",des:"Contains two 79.",chdes:"包含两个79。",count:148003,score:26,color:"#861fde"})
 		TagList.push({name:"6-claim",chname:"6位收取",des:"Contains 6-digit square or cubic number.",chdes:"包含6位平方数或立方数。",count:218898,score:21,color:"#861fde"})
 		TagList.push({name:"Multiple of 266",chname:"266的倍数",des:"Gets integer when divided by 266.",chdes:"除以266得到整数。",count:375939,score:16,color:"#4d52e3"})
-		TagList.push({name:"4-slice",chname:"4位片段",des:"Contains 4-length slice of 266^6",chdes:"包含266^6的4位片段。",count:555332,score:13,color:"#4d52e3"})
+		TagList.push({name:"4-slice",chname:"4位片段",des:"Contains 4-length slice of 266^6.",chdes:"包含266^6的4位片段。",count:555332,score:13,color:"#4d52e3"})
 		TagList.push({name:"266",chname:"266",des:"Contains 266.",chdes:"包含266。",count:599400,score:13,color:"#4d52e3"})
 		TagList.push({name:"Prime PFLF factor",chname:"PFLF素因子",des:"Factorization contains the 6th power of a prime number.",chdes:"因数分解包含一个素数的6次方。",count:877857,score:11,color:"#4d52e3"})
+		TagList.push({name:"Red green blue",chname:"红绿蓝",des:"Only has 3 types of digits.",chdes:"只有三种数码。",count:920151,score:10,color:"#4d52e3"})
 		TagList.push({name:"5-claim",chname:"5位收取",des:"Contains 5-digit square or cubic number.",chdes:"包含5位平方数或立方数。",count:954076,score:10,color:"#4d52e3"})
 		TagList.push({name:"Split",chname:"分离",des:"Can be split into some square or cubic numbers.",chdes:"可以分离成一些平方数或立方数。",count:1099343,score:10,color:"#4d52e3"})
 		TagList.push({name:"Cover",chname:"覆盖",des:"Can be covered by square or cubic number.",chdes:"可以被平方数或立方数覆盖。",count:1201253,score:9,color:"#4d52e3"})
 		TagList.push({name:"Multiple of 79",chname:"79的倍数",des:"Gets integer when divided by 79.",chdes:"除以79得到整数。",count:1265822,score:9,color:"#4d52e3"})
+		TagList.push({name:"Mod 10",chname:"模10",des:"All digits are in {0,1,4,5,6,9}.",chdes:"所有数码在{0,1,4,5,6,9}中。",count:1679615,score:8,color:"#ffe65d"})
 		TagList.push({name:"Perfect ending",chname:"完美收尾",des:"Ends with 25 or 00.",chdes:"以25或00结尾。",count:1999998,score:7,color:"#ffe65d"})
 		TagList.push({name:"LF sum",chname:"LF求和",des:"The sum of digits cubed is square or cubic.",chdes:"数位立方求和为平方数或者立方数。",count:2009327,score:7,color:"#ffe65d"})
 		TagList.push({name:"Pure dice",chname:"🎲",des:"All digits are in [1,6].",chdes:"所有数码在[1,6]中。",count:2015538,score:7,color:"#ffe65d"})
 		TagList.push({name:"Narcissistic",chname:"水仙花数",des:"Contains 153/370/371/407.",chdes:"含有153/370/371/407。",count:2378484,score:6,color:"#ffe65d"})
-		TagList.push({name:"Spare",chname:"空闲",des:"Contains at most 5 non-zero digits",chdes:"包含至多5个非0数位。",count:3809178,score:5,color:"#ffe65d"})
+		TagList.push({name:"Spare",chname:"空闲",des:"Contains at most 5 non-zero digits.",chdes:"包含至多5个非0数位。",count:3809178,score:5,color:"#ffe65d"})
 		TagList.push({name:"4-claim",chname:"4位收取",des:"Contains 4-digit square or cubic number.",chdes:"包含4位平方数或立方数。",count:3881683,score:5,color:"#ffe65d"})
 		TagList.push({name:"PF sum",chname:"PF求和",des:"The sum of digits squared is square or cubic.",chdes:"数位平方求和为平方数或者立方数。",count:4617908,score:5,color:"#ffe65d"})
 		TagList.push({name:"Half",chname:"一半",des:"At least half of the digits are same.",chdes:"至少一半的数码相同。",count:4918959,score:5,color:"#ffe65d"})
 		TagList.push({name:"79",chname:"79",des:"Contains 79.",chdes:"包含79。",count:6850999,score:4,color:"#7eef6d"})
-		TagList.push({name:"3-slice",chname:"3位片段",des:"Contains 3-length slice of 266^6",chdes:"包含266^6的3位片段。",count:6963686,score:4,color:"#7eef6d"})
+		TagList.push({name:"3-slice",chname:"3位片段",des:"Contains 3-length slice of 266^6.",chdes:"包含266^6的3位片段。",count:6963686,score:4,color:"#7eef6d"})
 		TagList.push({name:"Single-digit enthusiast",chname:"个位数狂热",des:"Contains digit 1,4,8,9.",chdes:"包含数码1，4，8，9。",count:7096824,score:4,color:"#7eef6d"})
 		TagList.push({name:"Prime LF factor",chname:"LF素因子",des:"Factorization contains the 3rd power of a prime number.",chdes:"因数分解包含一个素数的立方。",count:9529092,score:3,color:"#7eef6d"})
 		TagList.push({name:"Sum",chname:"求和",des:"The sum of digits is square or cubic.",chdes:"数位求和为平方或者立方。",count:11221667,score:3,color:"#7eef6d"})
@@ -1361,17 +1365,19 @@
 		TagList.push({name:"Prime PF factor",chname:"PF素因子",des:"Factorization contains the 2nd power of a prime number.",chdes:"因数分解包含一个素数的平方。",count:25146240,score:2,color:"#7eef6d"})
 		TagList.push({name:"Clear",chname:"清场",des:"Can be rearranged into square or cubic number.",chdes:"可以重排为平方数或立方数。",count:26730202,score:2,color:"#7eef6d"})
 		TagList.push({name:"Single-digit lover",chname:"个位数热爱",des:"Contains digit 1 and 4.",chdes:"包含数码1和4。",count:30683774,score:2,color:"#7eef6d"})
+		TagList.push({name:"Units place",chname:"个位",des:"Ends with 1,4,6 or 9.",chdes:"以1，4，6或9结尾。",count:39999996,score:2,color:"#7eef6d"})
 		TagList.push({name:"2-claim",chname:"2位收取",des:"Contains 2-digit square or cubic number.",chdes:"包含2位平方数或立方数。",count:40240172,score:2,color:"#7eef6d"})
 		TagList.push({name:"Used",chname:"已使用",des:"Has 8 non-zero digits.",chdes:"有8个非0数位。",count:43046721,score:2,color:"#7eef6d"})
 		TagList.push({name:"Empty",chname:"空",des:"Contains digit 0.",chdes:"包含数码0。",count:51572439,score:1,color:"#7eef6d"})
-		TagList.push({name:"2-slice",chname:"2位片段",des:"Contains 2-length slice of 266^6",chdes:"包含266^6的2位片段。",count:59125067,score:1,color:"#7eef6d"})
+		TagList.push({name:"2-slice",chname:"2位片段",des:"Contains 2-length slice of 266^6.",chdes:"包含266^6的2位片段。",count:59125067,score:1,color:"#7eef6d"})
 		TagList.push({name:"Twice thrice",chname:"两倍三倍",des:"Has a factor of 2 or 3.",chdes:"含有因子2或3。",count:66666666,score:1,color:"#7eef6d"})
-//[0-4:"#7eef6d",5-8:"#ffe65d",9-16:"#4d52e3",17-64:"#861fde",65-256:"#de1f1f",257-1024:"#1fdbde",1025+:"#ff2b75"]
+		const str6361="1572079861656972174186448671592516899858512812450872504323219619556673479012733846879421474610910234239899386888853953780852067285018078918409055180003144159723313944348372897343185033799717025624901745008646439239113346958025467693758842949221820468479798773777707907561704134570036157836818110360006288319446627888696745794686370067599434051249803490017292878478226693916050935387517685898443640936959597547555415815123408269140072315673636220720012576638893255777393491589372740135198868102499606980034585756956453387832101870775035371796887281873919195095110831630246816538280144631347272441440025153277786511554786983178745480270397736204999213960069171513912906775664203741550070743593774563747838390190221663260493633076560289262694544882880050306555573023109573966357490960540795472409998427920138343027825813551328407483100141487187549127495676780380443326520987266153120578525389089765760100613111146046219147932714981921081590944819996855840276686055651627102656814966200282974375098254991353560760886653041974532306241157050778179531520201226222292092438295865429963842163181889639993711680553372111303254205313629932400565948750196509982707121521773306083949064612482314101556359063040402452444584184876591730859927684326363779279987423361106744222606508410627259864801131897500393019965414243043546612167898129224964628203112718126080804904889168369753183461719855368652727558559974846722213488445213016821254519729602263795000786039930828486087093224335796258449929256406225436252161609809778336739506366923439710737305455117119949693444426976890426033642509039459204527590001572"
+		let tagMatch=new Array()
 		function PFLFtag(num,tag) {
 			if(tag==="Exactly") {
 				return (num===6361)
 			}
-			if(num===6361) return false
+			if(tagMatch.indexOf("Exactly")!==-1) return false
 			if(tag==="8-slice") {
 				let str=num.toString()
 				for(let i=0;i<L7-7;i++) if(str.match(STR7.slice(i,i+8))!==null) return true
@@ -1386,14 +1392,17 @@
 			if(tag==="Multiple of PFLF") {
 				return (num%1186611===0)
 			}
+			if(tag==="1/79") {
+				return ("1265822784810126582".match(num)!==null)
+			}
 			if(tag==="7-slice") {
-				if(PFLFtag(num,"8-slice")) return false
+				if(tagMatch.indexOf("8-slice")!==-1) return false
 				let str=num.toString()
 				for(let i=0;i<L7-6;i++) if(str.match(STR7.slice(i,i+7))!==null) return true
 				return false
 			}
 			if(tag==="LF") {
-				if(PFLFtag(num,"PFLF")) return false
+				if(tagMatch.indexOf("PFLF")!==-1) return false
 				return isLF(num)
 			}
 			if(tag==="Two-digit enthusiast") {
@@ -1412,8 +1421,8 @@
 				return (num.toString().match(/[1-9]/g).length<=2)
 			}
 			if(tag==="6-slice") {
-				if(PFLFtag(num,"8-slice")) return false
-				if(PFLFtag(num,"7-slice")) return false
+				if(tagMatch.indexOf("8-slice")!==-1) return false
+				if(tagMatch.indexOf("7-slice")!==-1) return false
 				let str=num.toString()
 				for(let i=0;i<L7-5;i++) if(str.match(STR7.slice(i,i+6))!==null) return true
 				return false
@@ -1423,8 +1432,11 @@
 				for(let i of String(num)) sum+=parseInt(i)
 				return (sum>64)
 			}
+			if(tag==="1/6361") {
+				return (str6361.match(num)!==null)
+			}
 			if(tag==="Internal LF") {
-				if(PFLFtag(num,"Internal PFLF")) return false
+				if(tagMatch.indexOf("Internal PFLF")!==-1) return false
 				if(num<100) return false
 				if(num.toString()[1]==="0") return false
 				let inner=parseInt(num.toString().slice(1,-1))
@@ -1434,22 +1446,22 @@
 				return (num.toString().match(/^[789]+$/)!==null)
 			}
 			if(tag==="PF") {
-				if(PFLFtag(num,"PFLF")) return false
+				if(tagMatch.indexOf("PFLF")!==-1) return false
 				return isPF(num)
 			}
 			if(tag==="Multiple of 6361") {
 				return (num%6361===0)
 			}
 			if(tag==="Main number") {
-				if(PFLFtag(num,"Full")) return false
+				if(tagMatch.indexOf("Full")!==-1) return false
 				let digitType=0
 				for(let i of "0123456789") if(num.toString().match(i)!==null) digitType++
 				return (digitType<=2)
 			}
 			if(tag==="5-slice") {
-				if(PFLFtag(num,"8-slice")) return false
-				if(PFLFtag(num,"7-slice")) return false
-				if(PFLFtag(num,"6-slice")) return false
+				if(tagMatch.indexOf("8-slice")!==-1) return false
+				if(tagMatch.indexOf("7-slice")!==-1) return false
+				if(tagMatch.indexOf("6-slice")!==-1) return false
 				let str=num.toString()
 				for(let i=0;i<L7-4;i++) if(str.match(STR7.slice(i,i+5))!==null) return true
 				return false
@@ -1467,24 +1479,24 @@
 				return (num.toString().match("6241")!==null)
 			}
 			if(tag==="No dice") {
-				if(PFLFtag(num,"Large")) return false
+				if(tagMatch.indexOf("Large")!==-1) return false
 				return (num.toString().match(/^[0789]+$/)!==null)
 			}
 			if(tag==="Internal PF") {
-				if(PFLFtag(num,"Internal PFLF")) return false
+				if(tagMatch.indexOf("Internal PFLF")!==-1) return false
 				if(num<100) return false
 				if(num.toString()[1]==="0") return false
 				let inner=parseInt(num.toString().slice(1,-1))
 				return isPF(inner)
 			}
 			if(tag==="Sum of two LF") {
-				if(PFLFtag(num,"PFLF")) return false
-				if(PFLFtag(num,"LF")) return false
+				if(tagMatch.indexOf("PFLF")!==-1) return false
+				if(tagMatch.indexOf("LF")!==-1) return false
 				for(let i=betterFloor(num**(1/3));i*i*i>=num/2;i--) if(isLF(num-i*i*i)) return true
 				return false
 			}
 			if(tag==="79*2") {
-				if(PFLFtag(num,"79*3")) return false
+				if(tagMatch.indexOf("79*3")!==-1) return false
 				return (num.toString().match("79")!==null && num.toString().match(/79/g).length>=2)
 			}
 			if(tag==="6-claim") {
@@ -1497,10 +1509,10 @@
 				return (num%266===0)
 			}
 			if(tag==="4-slice") {
-				if(PFLFtag(num,"8-slice")) return false
-				if(PFLFtag(num,"7-slice")) return false
-				if(PFLFtag(num,"6-slice")) return false
-				if(PFLFtag(num,"5-slice")) return false
+				if(tagMatch.indexOf("8-slice")!==-1) return false
+				if(tagMatch.indexOf("7-slice")!==-1) return false
+				if(tagMatch.indexOf("6-slice")!==-1) return false
+				if(tagMatch.indexOf("5-slice")!==-1) return false
 				let str=num.toString()
 				for(let i=0;i<L7-3;i++) if(str.match(STR7.slice(i,i+4))!==null) return true
 				return false
@@ -1512,6 +1524,15 @@
 				for(let i=0;i<8;i++) if(num%(primeArray[i]**6)===0 && num%(primeArray[i]**7)!==0) return true
 				return false
 			}
+			if(tag==="Red green blue") {
+				if(tagMatch.indexOf("Full")!==-1) return false
+				if(tagMatch.indexOf("Remain")!==-1) return false
+				if(tagMatch.indexOf("Large")!==-1) return false
+				if(tagMatch.indexOf("Main number")!==-1) return false
+				let digitType=0
+				for(let i of "0123456789") if(num.toString().match(i)!==null) digitType++
+				return (digitType<=3)
+			}
 			if(tag==="5-claim") {
 				if(num<100000) return
 				let str=num.toString()
@@ -1519,9 +1540,9 @@
 				return false
 			}
 			if(tag==="Split") {
-				if(PFLFtag(num,"PFLF")) return false
-				if(PFLFtag(num,"LF")) return false
-				if(PFLFtag(num,"PF")) return false
+				if(tagMatch.indexOf("PFLF")!==-1) return false
+				if(tagMatch.indexOf("LF")!==-1) return false
+				if(tagMatch.indexOf("PF")!==-1) return false
 				let str=num.toString(),covered=new Array(str.length+1).fill(false)
 				covered[0]=true
 				for(let i=0;i<str.length;i++) if(covered[i] && str[i]!=="0") {
@@ -1531,10 +1552,10 @@
 				return covered[str.length]
 			}
 			if(tag==="Cover") {
-				if(PFLFtag(num,"PFLF")) return false
-				if(PFLFtag(num,"LF")) return false
-				if(PFLFtag(num,"PF")) return false
-				if(PFLFtag(num,"Split")) return false
+				if(tagMatch.indexOf("PFLF")!==-1) return false
+				if(tagMatch.indexOf("LF")!==-1) return false
+				if(tagMatch.indexOf("PF")!==-1) return false
+				if(tagMatch.indexOf("Split")!==-1) return false
 				let str=num.toString(),covered=-1
 				for(let i=0;i<str.length;i++) {
 					if(str[i]==="0") {
@@ -1552,6 +1573,9 @@
 			if(tag==="Multiple of 79") {
 				return (num%79===0)
 			}
+			if(tag==="Mod 10") {
+				return (num.toString().match(/^[014569]+$/)!==null)
+			}
 			if(tag==="Perfect ending") {
 				if(num<100) return false
 				return (num%100===0 || num%100===25)
@@ -1562,19 +1586,19 @@
 				return isPFLF(sum)
 			}
 			if(tag==="Pure dice") {
-				if(PFLFtag(num,"8-slice")) return false
+				if(tagMatch.indexOf("8-slice")!==-1) return false
 				return (num.toString().match(/^[123456]+$/)!==null)
 			}
 			if(tag==="Narcissistic") {
 				return (num.toString().match("153")!==null || num.toString().match("370")!==null || num.toString().match("371")!==null || num.toString().match("407")!==null)
 			}
 			if(tag==="Spare") {
-				if(PFLFtag(num,"Remain")) return false
+				if(tagMatch.indexOf("Remain")!==-1) return false
 				return (num.toString().match(/[1-9]/g).length<=5)
 			}
 			if(tag==="4-claim") {
 				if(num<10000) return
-				if(PFLFtag(num,"79^2??")) return false
+				if(tagMatch.indexOf("79^2??")!==-1) return false
 				let str=num.toString()
 				for(let i=0;i<str.length-3;i++) if(str[i]!=="0" && isPFLF(parseInt(str.slice(i,i+4)))) return true
 				return false
@@ -1585,28 +1609,27 @@
 				return isPFLF(sum)
 			}
 			if(tag==="Half") {
-				if(PFLFtag(num,"Full")) return false
-				if(PFLFtag(num,"Main number")) return false
+				if(tagMatch.indexOf("Full")!==-1) return false
+				if(tagMatch.indexOf("Main number")!==-1) return false
 				for(let i of "0123456789") if(num.toString().match(i)!==null && num.toString().match(new RegExp(i,"g")).length>=num.toString().length/2) return true
 				return false
 			}
 			if(tag==="79") {
-				if(PFLFtag(num,"79*3")) return false
-				if(PFLFtag(num,"79*2")) return false
+				if(tagMatch.indexOf("79*3")!==-1) return false
+				if(tagMatch.indexOf("79*2")!==-1) return false
 				return (num.toString().match("79")!==null)
 			}
 			if(tag==="3-slice") {
-				if(PFLFtag(num,"8-slice")) return false
-				if(PFLFtag(num,"7-slice")) return false
-				if(PFLFtag(num,"6-slice")) return false
-				if(PFLFtag(num,"5-slice")) return false
-				if(PFLFtag(num,"4-slice")) return false
+				if(tagMatch.indexOf("8-slice")!==-1) return false
+				if(tagMatch.indexOf("7-slice")!==-1) return false
+				if(tagMatch.indexOf("6-slice")!==-1) return false
+				if(tagMatch.indexOf("5-slice")!==-1) return false
+				if(tagMatch.indexOf("4-slice")!==-1) return false
 				let str=num.toString()
 				for(let i=0;i<L7-2;i++) if(str.match(STR7.slice(i,i+3))!==null) return true
 				return false
 			}
 			if(tag==="Single-digit enthusiast") {
-				if(PFLFtag(num,"79^2??")) return false
 				return (num.toString().match("1")!==null && num.toString().match("4")!==null && num.toString().match("8")!==null && num.toString().match("9")!==null)
 			}
 			if(tag==="Prime LF factor") {
@@ -1620,7 +1643,7 @@
 			}
 			if(tag==="3-claim") {
 				if(num<1000) return
-				if(PFLFtag(num,"79^2?")) return false
+				if(tagMatch.indexOf("79^2?")!==-1) return false
 				let str=num.toString()
 				for(let i=0;i<str.length-2;i++) if(str[i]!=="0" && isPFLF(parseInt(str.slice(i,i+3)))) return true
 				return false
@@ -1631,8 +1654,8 @@
 				return (isPFLF(connect1) || (end>0 && isPFLF(connect2)))
 			}
 			if(tag==="Sum of two PF") {
-				if(PFLFtag(num,"PFLF")) return false
-				if(PFLFtag(num,"PF")) return false
+				if(tagMatch.indexOf("PFLF")!==-1) return false
+				if(tagMatch.indexOf("PF")!==-1) return false
 				for(let i=betterFloor(num**0.5);i*i>=num/2;i--) if(isPF(num-i*i)) return true
 				return false
 			}
@@ -1641,56 +1664,59 @@
 				return false
 			}
 			if(tag==="Clear") {
-				if(PFLFtag(num,"PFLF")) return false
-				if(PFLFtag(num,"LF")) return false
-				if(PFLFtag(num,"PF")) return false
+				if(tagMatch.indexOf("PFLF")!==-1) return false
+				if(tagMatch.indexOf("LF")!==-1) return false
+				if(tagMatch.indexOf("PF")!==-1) return false
 				let digit=0
 				for(let i of String(num)) digit+=10**i
 				return (digitArray.indexOf(digit)!==-1)
 			}
 			if(tag==="Single-digit lover") {
-				if(PFLFtag(num,"Two-digit enthusiast")) return false
-				if(PFLFtag(num,"79^2??")) return false
-				if(PFLFtag(num,"Single-digit enthusiast")) return false
+				if(tagMatch.indexOf("Two-digit enthusiast")!==-1) return false
+				if(tagMatch.indexOf("79^2??")!==-1) return false
+				if(tagMatch.indexOf("Single-digit enthusiast")!==-1) return false
 				return (num.toString().match("1")!==null && num.toString().match("4")!==null)
+			}
+			if(tag==="Units place") {
+				if(num<10) return false
+				return (num%10===1 || num%10===4 || num%10===6 || num%10===9)
 			}
 			if(tag==="2-claim") {
 				if(num<100) return
-				if(PFLFtag(num,"8-slice")) return false
-				if(PFLFtag(num,"7-slice")) return false
-				if(PFLFtag(num,"Two-digit enthusiast")) return false
-				if(PFLFtag(num,"79^2?")) return false
+				if(tagMatch.indexOf("8-slice")!==-1) return false
+				if(tagMatch.indexOf("7-slice")!==-1) return false
+				if(tagMatch.indexOf("Two-digit enthusiast")!==-1) return false
+				if(tagMatch.indexOf("79^2?")!==-1) return false
 				let str=num.toString()
 				for(let i=0;i<str.length-1;i++) if(str[i]!=="0" && isPFLF(parseInt(str.slice(i,i+2)))) return true
 				return false
 			}
 			if(tag==="Used") {
-				if(PFLFtag(num,"8-slice")) return false
-				if(PFLFtag(num,"Large sum")) return false
+				if(tagMatch.indexOf("8-slice")!==-1) return false
+				if(tagMatch.indexOf("Large sum")!==-1) return false
 				return (num>=10000000 && num.toString().match("0")===null)
 			}
 			if(tag==="Empty") {
-				if(PFLFtag(num,"No dice")) return false
+				if(tagMatch.indexOf("No dice")!==-1) return false
 				return (num.toString().match("0")!==null)
 			}
 			if(tag==="2-slice") {
-				if(PFLFtag(num,"8-slice")) return false
-				if(PFLFtag(num,"7-slice")) return false
-				if(PFLFtag(num,"Two-digit enthusiast")) return false
-				if(PFLFtag(num,"6-slice")) return false
-				if(PFLFtag(num,"5-slice")) return false
-				if(PFLFtag(num,"79^2?")) return false
-				if(PFLFtag(num,"79^2??")) return false
-				if(PFLFtag(num,"Multiple of 266")) return false
-				if(PFLFtag(num,"4-slice")) return false
-				if(PFLFtag(num,"3-slice")) return false
+				if(tagMatch.indexOf("8-slice")!==-1) return false
+				if(tagMatch.indexOf("7-slice")!==-1) return false
+				if(tagMatch.indexOf("Two-digit enthusiast")!==-1) return false
+				if(tagMatch.indexOf("6-slice")!==-1) return false
+				if(tagMatch.indexOf("5-slice")!==-1) return false
+				if(tagMatch.indexOf("79^2?")!==-1) return false
+				if(tagMatch.indexOf("79^2??")!==-1) return false
+				if(tagMatch.indexOf("4-slice")!==-1) return false
+				if(tagMatch.indexOf("3-slice")!==-1) return false
 				let str=num.toString()
 				for(let i=0;i<L7-1;i++) if(str.match(STR7.slice(i,i+2))!==null) return true
 				return false
 			}
 			if(tag==="Twice thrice") {
-				if(PFLFtag(num,"Multiple of PFLF")) return false
-				if(PFLFtag(num,"Multiple of 266")) return false
+				if(tagMatch.indexOf("Multiple of PFLF")!==-1) return false
+				if(tagMatch.indexOf("Multiple of 266")!==-1) return false
 				return (num%2===0 || num%3===0)
 			}
 		}
@@ -1698,9 +1724,27 @@
 			let matched=0
 			for(let i=1;i<=99999999;i++) {
 				if(PFLFtag(i,name)) matched++
-				if((i%1000000===0 && i<10000000) || i%10000000===0) console.log(i+" complete "+matched+" matched")
+				if((i%1000000===0 && i<10000000) || i%10000000===0 || i===99999999) console.log(i+" complete "+matched+" matched")
 			}
 			return matched
+		}
+		function tagCountCheck() {
+			for(let i in TagList) {
+				let recount=tagTotal(TagList[i].name)
+				if(recount!==TagList[i].count) {
+					console.error("Count error: "+TagList[i].name+"="+recount)
+					return
+				}
+			}
+		}
+		let dedulp=false,dedulpArray=new Array()
+		function tagDedulp() {
+			dedulp=true
+			for(let i=0;i<TagList.length;i++) {
+				dedulpArray[i]=new Array()
+				for(let j=i+1;j<TagList.length;j++) dedulpArray[i][j]=false
+			}
+			PFLFrng()
 		}
 		function clickTag(index) {
 			let tagElement=document.getElementById("PFLFrng-tag"+index)
@@ -1715,14 +1759,31 @@
 			if(num && num<1e8) seed=num
 			document.getElementById("PFLFrng-btn").innerHTML=seed
 			document.getElementById("PFLFrng-tags").innerHTML=""
+			tagMatch=new Array()
+			if(dedulp) {
+				for(let i=0;i<TagList.length;i++) if(PFLFtag(seed,TagList[i].name)) {
+					for(let j=i+1;j<TagList.length;j++) if(!dedulpArray[i][j]) {
+						tagMatch.push(TagList[i].name)
+						if(!PFLFtag(seed,TagList[j].name)) dedulpArray[i][j]=true
+						tagMatch.pop()
+					}
+				}
+			}
 			for(let i in TagList) if(PFLFtag(seed,TagList[i].name)) {
+				tagMatch.push(TagList[i].name)
 				totalScore+=TagList[i].score
 				document.getElementById("PFLFrng-tags").innerHTML+="<button id='PFLFrng-tag"+i+"' onclick='clickTag("+i+")' class='llmargin recbtn pointer' style='background: "+TagList[i].color+"'>"+translateText(TagList[i].name,"EN")+translateText(TagList[i].chname,"CH")+"</button>"
 			}
-			if(document.getElementById("PFLFrng-tags").innerHTML==="") {
+			if(tagMatch.length===0) {
 				document.getElementById("PFLFrng-tags").innerHTML=translateText("Empty...")
 			}
 			document.getElementById("PFLFrng-score").innerHTML=translateText("Score")+": "+totalScore
+			if(dedulp) {
+				for(let i=0;i<TagList.length;i++) for(let j=i+1;j<TagList.length;j++) if(!dedulpArray[i][j]) {
+					document.getElementById("PFLFrng-score").innerHTML+="<br><button type='button' id='dedulp-btn' tabindex='-1' onclick='{dedulpArray["+i+"]["+j+"]=true; PFLFrng()}' class='srecbtn'>Dedulplication</button>: "+TagList[i].name+" & "+TagList[j].name
+					return
+				}
+			}
 		}
 		function tryInput(num) {
 			if(animation) return
@@ -1757,17 +1818,17 @@
 			newList.lastChild.classList.add("green-bg","list-box","cflex","csub")
 			newList.lastChild.innerHTML="<h2>"+translateText("My Games")+"</h2><span>"+translateText("Top are the latest updated ones")+"</span><br>"
 			newList.appendChild(document.createElement("div"))
+			newList.lastChild.classList.add("llcyan-bg","list-box","rflex")
+			newList.lastChild.innerHTML="<div style='width: 30%'><svg viewBox='0 0 100 100' class='inner-svg'><path class='flgrey-path ns' d='M48 20L52 20L52 80L48 80ZM20 48L80 48L80 52L20 52Z'/><path class='fgreen-path ns' d='M40 10L60 10L60 30L40 30ZM10 40L30 40L30 60L10 60Z'/><path class='fyellow-path ns' d='M40 40L60 40L60 60L40 60ZM40 70L60 70L60 90L40 90Z'/><path class='fblue-path ns' d='M70 40L90 40L90 60L70 60Z'/><path class='lgrey-path fwhite-path mwidth' d='M50 14A6 6 0 0 0 50 26A6 6 0 0 0 50 14M20 44A6 6 0 0 0 20 56A6 6 0 0 0 20 44M50 44A6 6 0 0 0 50 56A6 6 0 0 0 50 44M80 44A6 6 0 0 0 80 56A6 6 0 0 0 80 44M50 74A6 6 0 0 0 50 86A6 6 0 0 0 50 74'/></svg></div><div class='cflex csub' style='width: 70%'><h2><a href='https://pflfgame.github.io/Petal-Crush' target='_blank'>Petal Crush</a></h2><span>"+translateText("Florr-based 3-match game.")+"</span><span>"+translateText("Last updated at ")+"20260807</span><div class='cmargin bar-container'><div class='bar' style='width: 25%'></div><span class='bar-text'>2(14)/?(?)"+translateText(" complete")+"</span></div><span class='upper'><a href='https://florrio.fandom.com/zh/wiki/%E4%BA%8C/Petal_Crush' target='_blank'>Wiki</a></span></div>"
+			newList.appendChild(document.createElement("div"))
+			newList.lastChild.classList.add("llyellow-bg","list-box","rflex")
+			newList.lastChild.innerHTML="<div style='width: 30%'><svg viewBox='0 0 100 100' class='inner-svg'><path class='fyellow-path ns' d='M0 0L100 0L100 100L0 100Z'/><path class='wide' d='M18 66A40 40 0 0 0 82 66M30 18L30 50M70 18L70 50'/></svg></div><div class='cflex csub' style='width: 70%'><h2><a href='https://pflfgame.github.io/Florroom-Legacy' target='_blank'>Florroom Legacy</a></h2><span>"+translateText("The legacy version of Florroom.")+"</span><span>"+translateText("Last updated at ")+"20260731</span><div class='cmargin bar-container'><div class='bar' style='width: 100%'></div><span class='bar-text'>"+translateText("Completed")+"</span></div><span class='upper'><a href='https://florrio.fandom.com/zh/wiki/%E4%BA%8C/Florroom_Legacy' target='_blank'>Wiki</a></span></div>"
+			newList.appendChild(document.createElement("div"))
 			newList.lastChild.classList.add("llyellow-bg","list-box","rflex")
 			newList.lastChild.innerHTML="<div style='width: 30%'><svg viewBox='0 0 100 100' class='inner-svg'><path class='wide' d='M50 2A48 48 0 0 0 50 98A48 48 0 0 0 50 2'/><path class='fyellow-path' d='M50 20A30 30 0 0 0 50 80A30 30 0 0 0 50 20M34 58A20 20 0 0 0 66 58M40 34L40 50M60 34L60 50'/></svg></div><div class='cflex csub' style='width: 70%'><h2><a href='https://pflfgame.github.io/Florroom' target='_blank'>Florroom</a></h2><span>"+translateText("Florr-based card game.")+"</span><span>"+translateText("Last updated at ")+"20260730</span><div class='cmargin bar-container'><div class='bar' style='width: 37.5%'></div><span class='bar-text'>3/8"+translateText(" complete")+"</span></div><span class='upper'><a href='https://florrio.fandom.com/zh/wiki/%E4%BA%8C/Florroom' target='_blank'>Wiki</a></span></div>"
 			newList.appendChild(document.createElement("div"))
 			newList.lastChild.classList.add("llpurple-bg","list-box","rflex")
 			newList.lastChild.innerHTML="<div style='width: 30%'><svg viewBox='0 0 100 100' class='inner-svg'><path class='fwhite-path ns' d='M0 0L100 0L100 100L0 100Z'/><path class='wide' d='M50 10A40 40 0 0 0 50 90A40 40 0 0 0 50 10'/><path class='fgreen-path mwidth rline' d='M26 46L50 75L74 46L66 32L34 32ZL42 46L50 75L58 46L74 46M50 32L42 46L58 46Z'/></svg></div><div class='cflex csub' style='width: 70%'><h2><a href='https://pflfgame.github.io/Virus1' target='_blank'>Virus 1</a></h2><span>"+translateText("Fight virus on a 6*6 board.")+"</span><span>"+translateText("Last updated at ")+"20260721</span><div class='cmargin bar-container'><div class='bar' style='width: 40%'></div><span class='bar-text'>20/50?"+translateText(" complete")+"</span></div></div>"
-			newList.appendChild(document.createElement("div"))
-			newList.lastChild.classList.add("llyellow-bg","list-box","rflex")
-			newList.lastChild.innerHTML="<div style='width: 30%'><svg viewBox='0 0 100 100' class='inner-svg'><path class='fyellow-path ns' d='M0 0L100 0L100 100L0 100Z'/><path class='wide' d='M18 66A40 40 0 0 0 82 66M30 18L30 50M70 18L70 50'/></svg></div><div class='cflex csub' style='width: 70%'><h2><a href='https://pflfgame.github.io/Florroom-Legacy' target='_blank'>Florroom Legacy</a></h2><span>"+translateText("The legacy version of Florroom.")+"</span><span>"+translateText("Last updated at ")+"20260713</span><div class='cmargin bar-container'><div class='bar' style='width: 100%'></div><span class='bar-text'>"+translateText("Completed")+"</span></div><span class='upper'><a href='https://florrio.fandom.com/zh/wiki/%E4%BA%8C/Florroom_Legacy' target='_blank'>Wiki</a></span></div>"
-			newList.appendChild(document.createElement("div"))
-			newList.lastChild.classList.add("llcyan-bg","list-box","rflex")
-			newList.lastChild.innerHTML="<div style='width: 30%'><svg viewBox='0 0 100 100' class='inner-svg'><path class='flgrey-path ns' d='M48 20L52 20L52 80L48 80ZM20 48L80 48L80 52L20 52Z'/><path class='fgreen-path ns' d='M40 10L60 10L60 30L40 30ZM10 40L30 40L30 60L10 60Z'/><path class='fyellow-path ns' d='M40 40L60 40L60 60L40 60ZM40 70L60 70L60 90L40 90Z'/><path class='fblue-path ns' d='M70 40L90 40L90 60L70 60Z'/><path class='lgrey-path fwhite-path mwidth' d='M50 14A6 6 0 0 0 50 26A6 6 0 0 0 50 14M20 44A6 6 0 0 0 20 56A6 6 0 0 0 20 44M50 44A6 6 0 0 0 50 56A6 6 0 0 0 50 44M80 44A6 6 0 0 0 80 56A6 6 0 0 0 80 44M50 74A6 6 0 0 0 50 86A6 6 0 0 0 50 74'/></svg></div><div class='cflex csub' style='width: 70%'><h2><a href='https://pflfgame.github.io/Petal-Crush' target='_blank'>Petal Crush</a></h2><span>"+translateText("Florr-based 3-match game.")+"</span><span>"+translateText("Last updated at ")+"20260322</span><div class='cmargin bar-container'><div class='bar' style='width: 15%'></div><span class='bar-text'>1(7)/?(?)"+translateText(" complete")+"</span></div><span class='upper'><a href='https://florrio.fandom.com/zh/wiki/%E4%BA%8C/Petal_Crush' target='_blank'>Wiki</a></span></div>"
 			newList.appendChild(document.createElement("div"))
 			newList.lastChild.classList.add("lblue-bg","list-box","rflex")
 			newList.lastChild.innerHTML="<div style='width: 30%'><svg viewBox='0 0 100 100' class='inner-svg'><path class='flpurple-path ns' d='M0 0L100 0L100 100L0 100Z'/><path class='fblack-path ns' d='M30 22A8 8 0 0 0 30 38A8 8 0 0 0 30 22M70 22A8 8 0 0 0 70 38A8 8 0 0 0 70 22M50 42A8 8 0 0 0 50 58A8 8 0 0 0 50 42M30 62A8 8 0 0 0 30 78A8 8 0 0 0 30 62M70 62A8 8 0 0 0 70 78A8 8 0 0 0 70 62'/></svg></div><div class='cflex csub' style='width: 70%'><h2><a href='https://pflfgame.github.io/PFLF' target='_blank'>PFLF</a></h2><span>"+translateText("I play PFLF everyday :D")+"</span><span>"+translateText("Last updated at ")+"20260313</span><div class='cmargin bar-container'><div class='bar' style='width: 100%'></div><span class='bar-text'>"+translateText("Completed")+"</span></div></div>"
@@ -1780,9 +1841,6 @@
 			newList.appendChild(document.createElement("div"))
 			newList.lastChild.classList.add("green-bg","list-box","cflex","csub")
 			newList.lastChild.innerHTML="<h2>"+translateText("Todo")+"</h2><span>"+translateText("What will be updated next")+"</span><br>"
-			newList.appendChild(document.createElement("div"))
-			newList.lastChild.classList.add("llcyan-bg","list-box","rflex")
-			newList.lastChild.innerHTML="<div style='width: 30%'><svg viewBox='0 0 100 100' class='inner-svg'><path class='flgrey-path ns' d='M48 20L52 20L52 80L48 80ZM20 48L80 48L80 52L20 52Z'/><path class='fgreen-path ns' d='M40 10L60 10L60 30L40 30ZM10 40L30 40L30 60L10 60Z'/><path class='fyellow-path ns' d='M40 40L60 40L60 60L40 60ZM40 70L60 70L60 90L40 90Z'/><path class='fblue-path ns' d='M70 40L90 40L90 60L70 60Z'/><path class='lgrey-path fwhite-path mwidth' d='M50 14A6 6 0 0 0 50 26A6 6 0 0 0 50 14M20 44A6 6 0 0 0 20 56A6 6 0 0 0 20 44M50 44A6 6 0 0 0 50 56A6 6 0 0 0 50 44M80 44A6 6 0 0 0 80 56A6 6 0 0 0 80 44M50 74A6 6 0 0 0 50 86A6 6 0 0 0 50 74'/></svg></div><div class='cflex csub' style='width: 70%'><h2><a href='https://pflfgame.github.io/Petal-Crush' target='_blank'>Petal Crush</a></h2><span>"+translateText("Will be updated at ")+"~20260805+?</span><div class='cmargin bar-container'><div class='yellow-bg bar apos' style='width: 25%'></div><div class='bar apos' style='width: 15%'></div><span class='bar-text'>1-&gt;2"+translateText(" to complete")+"</span></div></div>"
 			newList.appendChild(document.createElement("div"))
 			newList.lastChild.classList.add("llyellow-bg","list-box","rflex")
 			newList.lastChild.innerHTML="<div style='width: 30%'><svg viewBox='0 0 100 100' class='inner-svg'><path class='wide' d='M50 2A48 48 0 0 0 50 98A48 48 0 0 0 50 2'/><path class='fyellow-path' d='M50 20A30 30 0 0 0 50 80A30 30 0 0 0 50 20M34 58A20 20 0 0 0 66 58M40 34L40 50M60 34L60 50'/></svg></div><div class='cflex csub' style='width: 70%'><h2><a href='https://pflfgame.github.io/Florroom' target='_blank'>Florroom</a></h2><span>"+translateText("Will be updated at ")+"~202609?</span><div class='cmargin bar-container'><div class='yellow-bg bar apos' style='width: 50%'></div><div class='bar apos' style='width: 37.5%'></div><span class='bar-text'>3-&gt;4"+translateText(" to complete")+"</span></div></div>"
